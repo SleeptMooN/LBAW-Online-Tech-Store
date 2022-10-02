@@ -1,9 +1,9 @@
 # ER: Requirements Specification Component
 
- TechLab é uma plataforma web de compras online que permite aos seus utlizadores acesso a um vasto catálogo de produtos informáticos.
+ OnlyT3ch é uma plataforma web de compras online que permite aos seus utlizadores acesso a um vasto catálogo de produtos informáticos.
 
-## A1: TechLab
-A TechLab está a ser desenvolvida por um pequeno grupo de desenvolvedores(stakeholders) como um produto direcionado a todas as pessoas que procurem adquirir algum tipo de artigo informático.
+## A1: OnlyT3ch
+A OnlyT3ch está a ser desenvolvida por um pequeno grupo de desenvolvedores(stakeholders) como um produto direcionado a todas as pessoas que procurem adquirir algum tipo de artigo informático.
 
 O principal objetivo deste projeto é desenvolver um sistema de informação com interface web prático e fiável para suporte a lojas online. Para dispor de uma grande variedade de produtos, a loja venderá várias marcas de tecnologia assim como produtos de todo o espetro da informática como computadores, smartphones, acessórios e tablets.
 
@@ -26,7 +26,7 @@ Este artefacto contém a descrição e a identificação de todos os atores e re
 
 | ![](./Actors.png) |
 |:--:|
-| Figura 1: Atores da ... |
+| Figura 1: Atores da OnlyT3ch |
 
 | Identificador | Descrição |
 | -------------------- |  ------------------------------------------------------------------------------ |
@@ -38,7 +38,7 @@ Este artefacto contém a descrição e a identificação de todos os atores e re
 | Administrador     | Utilizador autenticado responsável por gerenciar produtos, encomendas e utilizadores|
 | OAuth API | OAuth API externo que pode ser usado para registar ou auntenticar no sistema|
 
-Tabela 1: Descrição dos atores da TechLab
+Tabela 1: Descrição dos atores da OnlyT3ch
 
 ### 2. User Stories
 
@@ -56,7 +56,7 @@ Tabela 1: Descrição dos atores da TechLab
 | US08       | About Page | Média | Como *User*, quero ver ter acesso à about page, para obter mais informações sobre o website |
 | US09   | Ordenar por | Baixa | Como *User*, quero ordenar os produtos disponíveis por preço ou review, para poder ter uma visão mais organizada e facilmente descartar opções de compra em caso de dúvida |    
 
-Tabela 2: User`s user stories.
+Tabela 2: User's user stories.
 
 #### 2.2. Unauthenticated User
 
@@ -91,7 +91,7 @@ Tabela 4: Authenticated User's user stories.
 | US31       | Editar avaliação | Média | Como *Review Author*, quero editar a minha avaliação, para poder corrigir eventuais erros ou alterar alguma informação |
 | US32       | Remover avaliação | Média | Como *Review Author*, quero remover a minha avaliação, para que os outros utilizadores não a consigam ler |
 
-Tabela 5: Review Author`s user stories.
+Tabela 5: Review Author's user stories.
 
 #### 2.5 Buyer
 
@@ -101,7 +101,7 @@ Tabela 5: Review Author`s user stories.
 | US42       | Acompanhar a encomenda| Média | Como *Buyer*, quero acompanhar a minha encomenda, para saber em que estado é que se encontra |
 | US43       | Cancelar pedido | Média | Como *Buyer*, quero cancelar o meu pedido, para o caso de já não queres adquirir os produtos |
 
-Tabela 6: Buyer`s user stories.
+Tabela 6: Buyer's user stories.
 
 #### 2.6 Administrator
 
@@ -115,7 +115,7 @@ Tabela 6: Buyer`s user stories.
 | US56      | Gerir o estado das encomendas | Média | Como *Administrator*, quero gerir o estado das encomendas, para informar os compradores sobre o mesmo |
 | US57      | Gerir avaliações reportadas | Baixa | Como *Administrator*, quero gerir as avaliações reportadas, para manter as avaliações justas e não ofensivas |
 
-Tabela 7: Administrator`s user stories.
+Tabela 7: Administrator's user stories.
 
 
 ### 3. Supplementary Requirements
@@ -128,8 +128,9 @@ Tabela 7: Administrator`s user stories.
 | BR02 | Data de retorno | Os produtos adquiridos não podem ser devolvidos passados mais de 10 dias da compra. |
 | BR03 | Stock | Não podem ser adquiridos produtos que não se encontrem em stock |
 | BR04 | Histórico de conta apagada | Após a eliminação da conta de um utilizador os dados partilhados (comentários,reviews,etc) são mantidos mas de forma anónima. |
+| BR05 | Comentários únicos | Os utilizadores podem apenas realizar uma avaliação por produto |
 
-Tabela 8: TechLab Business rules.
+Tabela 8: OnlyT3ch Business rules.
 
 #### 3.2. Technical requirements
 
@@ -146,7 +147,7 @@ Tabela 8: TechLab Business rules.
 | TR09 | Ética | O sistema deve respeitar os princípios éticos no desenvolvimento de software(detalhes pessoais dos usuários ou dados de uso,nem compartilhar os mesmos sem conhecimento dos próprios)| 
 | TR10 | Performance | O sistema deve ser rápido e ter tempos de resposta inferiores a 2s para garantir a atenção dos utilizadores|
 
-Tabela 9: TechLab Technical requirements.
+Tabela 9: OnlyT3ch Technical requirements.
 
 #### 3.3. Restrictions
 
@@ -154,33 +155,61 @@ Tabela 9: TechLab Technical requirements.
 | ---------------- | -------------------| ------------------------------------------------------------------------------ |
 | C01 | Prazo | O sistema deve estar operacional até ao final do semestre| 
 
-Tabela 10: TechLab Restrictions.
+Tabela 10: OnlyT3ch Restrictions.
 
 ---
 
 
 ## A3: Information Architecture
 
-> Brief presentation of the artefact goals.
+Os principais objetivos deste artefacto são mostrar como as páginas principais se relacionam (sitemap) e criar protótipos simples da interface do site (wireframes).
 
 
 ### 1. Sitemap
+ ![](./Sitemap.png) 
 
-> Sitemap presenting the overall structure of the web application.  
-> Each page must be identified in the sitemap.  
-> Multiple instances of the same page (e.g. student profile in SIGARRA) are presented as page stacks.
+ Figura 1: Sitemap da OnlyT3ch 
 
 
 ### 2. Wireframes
 
-> Wireframes for, at least, two main pages of the web application.
-> Do not include trivial use cases.
+#### UI01: Home Page 
+![](./Homepage.png) 
+
+ Figura 2: Homepage (UI01) wireframe
+
+ - 1 -> Acesso direto à barra de pesquisa 
+ - 2 -> Acesso direto ao perfil,carrinho e favoritos(wishlist)
+ - 3 -> Publicidade 
+ - 4 -> Produtos em destaque
+ - 5 -> Link para as páginas estáticas 
+
+#### UI08: Login Page
+![](./SIGNIN.png) 
+
+ Figura 3: Login (UI08) wireframe
+
+ - 1 -> Breadcrumbs que facilitam a navegação do utilizador
+ - 2 -> Link para as páginas estáticas 
 
 
-#### UIxx: Page Name
+#### UI09: Edit profile 
+![](./Profile.png) 
 
-#### UIxx: Page Name
+ Figura 4: Edit Profile (UI09) wireframe
 
+ - 1 -> Tab que facilita a navegação do utilizador
+ - 2 -> Acesso à informação necessário para criar perfil
+ - 3 -> Acesso direto à secção de apoio ao cliente
+
+#### UI12: Products 
+![](./Product.png) 
+
+ Figura 5: Products (UI12) wireframe
+
+ - 1 -> Adicionar produto ao carrinho
+ - 2 -> Adicionar produto à lista de desejos
+ - 3 -> Reviews ao produto
 
 ---
 
@@ -192,8 +221,8 @@ Changes made to the first submission:
 1. ...
 
 ***
-GROUP22114, DD/MM/2022
+GROUP22114, 01/10/2022
 
 * António Pedro Cabral dos Santos, up201907156 up201907156@up.pt
-* João Margato Borlido Pereira, up201907007 up201907007@up.pt 
+* João Margato Borlido Pereira, up201907007 up201907007@up.pt (editor)
 * Miguel Ângelo Pacheco Valente, up201704608 up201704608@up.pt
