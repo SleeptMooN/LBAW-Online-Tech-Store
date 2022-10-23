@@ -4,7 +4,7 @@
 ## ONLINE SHOP 
 
 ### Artifacts
-[ER: Requirements Specification Component](./ER/er.md)
+[ER: Requirements Specification Component](./Docs/ER/er.md)
 
 ---
 |Nome | Email |

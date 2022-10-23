@@ -53,7 +53,7 @@ Tabela 1: Descrição dos atores da OnlyT3ch
 | US05       | Procurar produtos | Alta | Como *User*, quero procurar produtos, para facilmente encontrar aquilo que procuro|
 | US06       | Procurar categorias de produtos | Média | Como *User*, quero ver as categorias dos produtos, para os poder encontrar mais facilmente |
 | US07       | Ver as avaliações dos produtos | Média | Como *User*, quero ver as avaliações dos produtos, para me ajudar na escolha dos mesmos |
-| US08       | About Page | Média | Como *User*, quero ver ter acesso à about page, para obter mais informações sobre o website |
+| US08       | About Page | Média | Como *User*, quero ter acesso à about page, para obter mais informações sobre o website |
 | US09   | Ordenar por | Baixa | Como *User*, quero ordenar os produtos disponíveis por preço ou review, para poder ter uma visão mais organizada e facilmente descartar opções de compra em caso de dúvida |    
 
 Tabela 2: User's user stories.
@@ -77,9 +77,10 @@ Tabela 3: Unauthenticated User's user stories.
 | US22       | Editar perfil | Alta | Como *Authenticated User*, quero editar o meu perfil, para poder atualizar a minha informação |
 | US23      | Ver histórico de compras | Alta | Como *Authenticated User*, quero ver o meu histórico de compras, para poder ver os produtos que adquiri |
 | US24 | Realizar checkout | Alta | Como *Authenticated User*, quero realizar checkout, para poder proceder à compra dos produtos |
+| US25 | Apagar conta | Alta | Como *Authenticated User*, quero poder apagar a minha conta, para poder eliminar as minhas informações do site |
 | US25       | Adicionar um produto à wishlist | Média | Como *Authenticated User*, quero adicionar um produto à wishlist, para futuramente decidir se o pretendo adquirir |
 | US26       | Gerir wishlist | Média | Como *Authenticated User*, quero gerir a wishlist, para adicionar ou remover produtos conforme necessário |
-| US27       | Avaliar um produto | Média | Como *Authenticated User*, quero avaliar os produtos que adquiri |
+| US27       | Avaliar um produto | Média | Como *Authenticated User*, quero avaliar os produtos que adquiri, para ajudar a melhorar o produto e ajudar na escolha dos outros utilizadores |
 | US28       | Reportar uma avaliação | Baixa | Como *Authenticated User*, quero reportar uma avaliação, para ajudar os administradores a manter as avaliações justas e não ofensivas |
 
 Tabela 4: Authenticated User's user stories.
@@ -141,7 +142,7 @@ Tabela 8: OnlyT3ch Business rules.
 |**TR03** | **Usabilidade** | **O sistema da loja deve ser intuitivo e fácil de usar,foi idealizado para todo o tipo de procura de material a nível informático independentemente das necessidades dos utilizadores** |
 | TR04 | Aplicação web | O sistema deve ser implementado como uma aplicação web para fornecer suporte a uma loja online (HTML, JavaScript, CSS e PHP)|
 | TR05 | Portabilidade | O sistema deve funcionar em várias plataformas (windows,linux,Mac os,etc.), para ser facilmente disponível a uma grande base de usuários|
-| **TR06** | **Segurança** | **O sistema deve proteger as informações de acesso dos ulilizadores à plataforma através do uso de um sistema de autenticação e verificação** | 
+| **TR06** | **Segurança** | **O sistema deve proteger as informações de acesso dos utilizadores à plataforma através do uso de um sistema de autenticação e verificação** | 
 | TR07 | Robustês | O sistema deve ser capaz de lidar com erros de tempo de execução continuando a operar |
 | TR08 | Escalabilidade | O sistema deve estar preparado para lidar com o aumento de utilizadores/compradores |
 | TR09 | Ética | O sistema deve respeitar os princípios éticos no desenvolvimento de software(detalhes pessoais dos usuários ou dados de uso,nem compartilhar os mesmos sem conhecimento dos próprios)| 
@@ -173,7 +174,7 @@ Os principais objetivos deste artefacto são mostrar como as páginas principais
 
 ### 2. Wireframes
 
-#### UI01: Home Page 
+#### UI01: HomePage 
 ![](./Homepage.png) 
 
  Figura 2: Homepage (UI01) wireframe
@@ -217,8 +218,8 @@ Os principais objetivos deste artefacto são mostrar como as páginas principais
 ## Revision history
 
 Changes made to the first submission:
-1. Item 1
-1. ...
+1. 
+2. Identificar o que acontece quando um utilizador é apagado
 
 ***
 GROUP22114, 01/10/2022
