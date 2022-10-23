@@ -6,7 +6,7 @@
 ### Artifacts
 [ER: Requirements Specification Component](./Docs/ER/er.md)
 
-[EBD: Database Specification](./Docs/EDB/edb.md)
+[EBD: Database Specification](./Docs/EDB/ebd.md)
 
 ---
 |Nome | Email |
