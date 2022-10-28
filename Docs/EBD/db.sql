@@ -71,25 +71,24 @@ create table Purchase(
   totalCost FLOAT NOT NULL CHECK (totalCost > 0),
   purchaseDate TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
   quantity INTEGER CHECK (quantity >= 0),
-  id_Product INTEGER REFERENCES Product(id_Product),
-  id_Users INTEGER REFERENCES Users(id_Users)
+  id_Product INTEGER REFERENCES Product(id_Product)
 );
 
 create table ProductPurchase(
-  id_Product INTEGER REFERENCES Product(id_Product) ON UPDATE CASCADE,
-  id_Purchase INTEGER REFERENCES Purchase(id_Purchase) ON UPDATE CASCADE,
+  id_Product INTEGER REFERENCES Product(id_Product),
+  id_Purchase INTEGER REFERENCES Purchase(id_Purchase),
   PRIMARY KEY(id_Product, id_Purchase)
 );
 
 create table Orders(
   id_PurchaseOrder SERIAL PRIMARY KEY,
-  cost FLOAT NOT NULL CHECK (cost > 0),
   orderDate TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
+  cost FLOAT NOT NULL CHECK (cost > 0),
   status TEXT NOT NULL,
-  CONSTRAINT status CHECK (status IN ('Processing', 'Shipping', 'Delivered')),
   id_Users INTEGER REFERENCES Users(id_Users),
   id_Address INTEGER REFERENCES Address(id_Address) ON DELETE CASCADE,
-  id_Purchase INTEGER REFERENCES Purchase(id_Purchase) ON DELETE CASCADE
+  id_Purchase INTEGER REFERENCES Purchase(id_Purchase) ON DELETE CASCADE,
+  CONSTRAINT status CHECK (status IN ('Processing', 'Shipping', 'Delivered'))
 );
 
 create table Cart(
@@ -108,9 +107,8 @@ create table About(
   phone INTEGER NOT NULL
 );
 
-
 -- INDEX 1
-CREATE INDEX userid_purchase ON Purchase USING hash (id_Users);
+CREATE INDEX userid_order ON Orders USING hash (id_Users);
 
 -- INDEX 2
 CREATE INDEX idproduct_review ON Review USING hash (id_Product);
@@ -125,7 +123,7 @@ CREATE INDEX price_product ON Product USING btree (price);
 ALTER TABLE Product
 ADD COLUMN tsvectors TSVECTOR;
 
-CREATE FUNCTION product_search_update() RETURNS TRIGGER AS $$
+CREATE OR REPLACE FUNCTION product_search_update() RETURNS TRIGGER AS $$
 BEGIN
 IF TG_OP = 'INSERT' THEN
   NEW.tsvectors = (
@@ -143,37 +141,35 @@ RETURN New;
 END $$
 LANGUAGE plpgsql;
 
-CREATE TRIGGER product_search_update
+CREATE OR REPLACE TRIGGER product_search_update
 BEFORE INSERT OR UPDATE ON Product
 FOR EACH row
 EXECUTE PROCEDURE product_search_update();
 
 CREATE INDEX search_idx ON Product USING GIN(tsvectors);
 
-
 -- TRIGGER 1
-CREATE FUNCTION update_product_score() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION update_product_score() RETURNS TRIGGER AS
 $BODY$
 BEGIN
 	UPDATE Product
 	SET score = (SELECT AVG(score) FROM Review WHERE id_Product = New.id_Product)
 	WHERE id_Product = New.id_Product;
-RETURN NEW; 	
+RETURN NEW;
 END
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE TRIGGER product_score AFTER INSERT OR UPDATE OR DELETE
+CREATE OR REPLACE TRIGGER product_score AFTER INSERT OR UPDATE OR DELETE
 ON Review
+FOR EACH ROW
 EXECUTE PROCEDURE update_product_score();
 
-
 -- TRIGGER 2
-CREATE FUNCTION check_purchase_quantities() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION check_purchase_quantities() RETURNS TRIGGER AS
 $BODY$
 BEGIN
-	IF
-		NOT EXISTS (SELECT quantity FROM Product WHERE id_Product = New.id_Product AND quantity >= New.quantity)
+	IF NOT EXISTS (SELECT quantity FROM Product WHERE id_Product = New.id_Product AND quantity >= New.quantity)
 	THEN
 		RAISE EXCEPTION 'You can’t buy % items of product %' , New.quantity, New.id_Product;
 	END IF;
@@ -182,59 +178,57 @@ END
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE TRIGGER check_purchase_quantities BEFORE INSERT
+CREATE OR REPLACE TRIGGER check_purchase_quantities BEFORE INSERT
 ON Purchase
 FOR EACH ROW
 EXECUTE PROCEDURE check_purchase_quantities();
 
-
 -- TRIGGER 3
-CREATE FUNCTION clear_cart() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION clear_cart() RETURNS TRIGGER AS
 $BODY$
 BEGIN
 	DELETE FROM Cart
 	WHERE id_Users = New.id_Users;
-
-RETURN NEW;
+  RETURN NEW;
 END
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE TRIGGER clear_cart AFTER INSERT
-ON Purchase
+CREATE OR REPLACE TRIGGER clear_cart AFTER INSERT
+ON Orders
+FOR EACH ROW
 EXECUTE PROCEDURE clear_cart();
 
-
 -- TRIGGER 4
-CREATE FUNCTION remove_wishlist_product() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION remove_wishlist_product() RETURNS TRIGGER AS
 $BODY$
 BEGIN
 	DELETE FROM Wishlist
 	WHERE id_Users = New.id_Users
   AND id_Product = New.id_Product;
-RETURN NEW;  
+RETURN NEW;
 END
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE TRIGGER remove_wishlist_product AFTER INSERT
+CREATE OR REPLACE TRIGGER remove_wishlist_product AFTER INSERT
 ON Cart
+FOR EACH ROW
 EXECUTE PROCEDURE remove_wishlist_product();
 
-
 -- TRIGGER 5
-CREATE FUNCTION update_available_products() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION update_available_products() RETURNS TRIGGER AS
 $BODY$
 BEGIN
   UPDATE Product
-  SET quantity = quantity - New.quantity
+  SET quantity = Product.quantity - New.quantity
   WHERE id_Product = New.id_Product;
-RETURN NEW;   
+  RETURN NEW;
 END
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE TRIGGER update_available_products AFTER INSERT
+CREATE OR REPLACE TRIGGER update_available_products AFTER INSERT
 ON Purchase
+FOR EACH ROW
 EXECUTE PROCEDURE update_available_products();
-
