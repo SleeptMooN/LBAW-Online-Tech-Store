@@ -78,10 +78,10 @@ Tabela 3: Unauthenticated User's user stories.
 | US23      | Ver histórico de compras | Alta | Como *Authenticated User*, quero ver o meu histórico de compras, para poder ver os produtos que adquiri |
 | US24 | Realizar checkout | Alta | Como *Authenticated User*, quero realizar checkout, para poder proceder à compra dos produtos |
 | US25 | Apagar conta | Alta | Como *Authenticated User*, quero poder apagar a minha conta, para poder eliminar as minhas informações do site |
-| US25       | Adicionar um produto à wishlist | Média | Como *Authenticated User*, quero adicionar um produto à wishlist, para futuramente decidir se o pretendo adquirir |
-| US26       | Gerir wishlist | Média | Como *Authenticated User*, quero gerir a wishlist, para adicionar ou remover produtos conforme necessário |
-| US27       | Avaliar um produto | Média | Como *Authenticated User*, quero avaliar os produtos que adquiri, para ajudar a melhorar o produto e ajudar na escolha dos outros utilizadores |
-| US28       | Reportar uma avaliação | Baixa | Como *Authenticated User*, quero reportar uma avaliação, para ajudar os administradores a manter as avaliações justas e não ofensivas |
+| US26       | Adicionar um produto à wishlist | Média | Como *Authenticated User*, quero adicionar um produto à wishlist, para futuramente decidir se o pretendo adquirir |
+| US27       | Gerir wishlist | Média | Como *Authenticated User*, quero gerir a wishlist, para adicionar ou remover produtos conforme necessário |
+| US28       | Avaliar um produto | Média | Como *Authenticated User*, quero avaliar os produtos que adquiri, para ajudar a melhorar o produto e ajudar na escolha dos outros utilizadores |
+| US29       | Reportar uma avaliação | Baixa | Como *Authenticated User*, quero reportar uma avaliação, para ajudar os administradores a manter as avaliações justas e não ofensivas |
 
 Tabela 4: Authenticated User's user stories.
 
