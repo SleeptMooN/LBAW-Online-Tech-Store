@@ -20,22 +20,6 @@ tags:
   - name: 'M04: Orders and Shopping Cart'
   - name: 'M05: Static Pages'
 
-components:
-  schemas:
-    ValidationError:
-      type: object
-      properties:
-        message:
-          type: string
-          description: Describes what happened
-        errors:
-          type: object
-          description: What fields failed validation and why.
-          additionalProperties:
-            type: array
-            description: Reasons why the field failed validation
-            items:
-              type: string
 
 paths:
 
