@@ -141,7 +141,7 @@ RETURN New;
 END $$
 LANGUAGE plpgsql;
 
-CREATE OR REPLACE TRIGGER product_search_update
+CREATE TRIGGER product_search_update
 BEFORE INSERT OR UPDATE ON Product
 FOR EACH row
 EXECUTE PROCEDURE product_search_update();
@@ -160,7 +160,7 @@ END
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE OR REPLACE TRIGGER product_score AFTER INSERT OR UPDATE OR DELETE
+CREATE TRIGGER product_score AFTER INSERT OR UPDATE OR DELETE
 ON Review
 FOR EACH ROW
 EXECUTE PROCEDURE update_product_score();
@@ -178,7 +178,7 @@ END
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE OR REPLACE TRIGGER check_purchase_quantities BEFORE INSERT
+CREATE TRIGGER check_purchase_quantities BEFORE INSERT
 ON Purchase
 FOR EACH ROW
 EXECUTE PROCEDURE check_purchase_quantities();
@@ -194,7 +194,7 @@ END
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE OR REPLACE TRIGGER clear_cart AFTER INSERT
+CREATE TRIGGER clear_cart AFTER INSERT
 ON Orders
 FOR EACH ROW
 EXECUTE PROCEDURE clear_cart();
@@ -211,7 +211,7 @@ END
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE OR REPLACE TRIGGER remove_wishlist_product AFTER INSERT
+CREATE TRIGGER remove_wishlist_product AFTER INSERT
 ON Cart
 FOR EACH ROW
 EXECUTE PROCEDURE remove_wishlist_product();
@@ -228,7 +228,7 @@ END
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE OR REPLACE TRIGGER update_available_products AFTER INSERT
+CREATE TRIGGER update_available_products AFTER INSERT
 ON Purchase
 FOR EACH ROW
 EXECUTE PROCEDURE update_available_products();

@@ -144,7 +144,7 @@ paths:
                  value: '/login'
               
   /deleteaccount:  ####### Delete account ########
-    get:
+    post:
       operationId: R106
       summary: "R106: Delete User Account"
       description: 'Delete User account. Access: OWN'
@@ -469,11 +469,36 @@ paths:
 
         '404':
           description: "User not logged in or is logged in as an admin"
+
+
+  /api/users/cart/{id_Product}/remove/:
+    delete:
+      operationId: R403
+      summary: 'R403: Remove a product from cart API'
+      description: "Remove a product from the cart. Access: OWN"
+      tags:
+        - 'M04: Orders and Shopping Cart'
+      parameters:
+        - in: path
+          name: id_Product
+          schema:
+            type: integer
+            minimum: 1
+          required: true
+
+      responses:
+        '200': 
+          description: "Ok. Product was removed from cart"
+        '403':
+          description: "User not logged in or is logged in as an admin"
+        '422':
+          description: "Product does not exist or is not in cart."
+
             
   /api/users/cart/update/:
     post:
-      operationId: R403
-      summary: 'R403: Set product amount on cart API'
+      operationId: R404
+      summary: 'R404: Set product amount on cart API'
       description: "Set product amount on cart. Access: OWN"
       tags:
         - 'M04: Orders and Shopping Cart'
@@ -506,8 +531,8 @@ paths:
 
   /api/users/cart/add/:
     post:
-      operationId: R404
-      summary: 'R404 Add product amount to cart API'
+      operationId: R405
+      summary: 'R405 Add product amount to cart API'
       description: "Add product amount to cart. Access: OWN"
       tags:
         - 'M04: Orders and Shopping Cart'
@@ -541,8 +566,8 @@ paths:
 
   /users/orders:   ####### Orders ########
     get:
-      operationId: R405
-      summary: 'R405: View Profile Purchase History page'
+      operationId: R406
+      summary: 'R406: View Profile Purchase History page'
       description: 'Show Profile Purchase History page. Access: OWN'
       tags:
         - 'M04: Orders and Shopping Cart'
@@ -557,8 +582,8 @@ paths:
     
   /orders/{id}:
     get:
-      operationId: R406
-      summary: 'R406: View Order page'
+      operationId: R407
+      summary: 'R407: View Order page'
       description: 'Show Order page. Access: OWN, ADM'
       tags:
         - 'M04: Orders and Shopping Cart'
@@ -580,8 +605,8 @@ paths:
 
   /users/checkout:
     post:
-      operationId: R407
-      summary: 'R407: Checkout current cart action'
+      operationId: R408
+      summary: 'R408: Checkout current cart action'
       description: 'Checkout the current user cart. Access: USR'
       tags:
         - 'M04: Orders and Shopping Cart'
