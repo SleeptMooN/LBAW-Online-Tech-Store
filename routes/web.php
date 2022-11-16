@@ -11,7 +11,13 @@
 |
 */
 // Home
-Route::get('/', 'Auth\LoginController@home');
+Route::get('/', 'HomePageController@index');
+Route::get('about', 'HomePageController@about');
+Route::get('services', 'HomePageController@services');
+Route::get('faq', 'HomePageController@faq');
+Route::get('contact', 'HomePageController@contact');
+
+
 
 // Cards
 Route::get('cards', 'CardController@list');
