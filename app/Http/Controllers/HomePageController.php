@@ -26,7 +26,7 @@ class HomePageController extends Controller
    * Show the application Terms and conditions page.
    *
    */
-  public function services() {
+  public function terms() {
     return view('pages.terms');
   }
 

@@ -13,9 +13,14 @@
 // Home
 Route::get('/', 'HomePageController@index');
 Route::get('about', 'HomePageController@about');
-Route::get('services', 'HomePageController@services');
+Route::get('terms', 'HomePageController@terms');
 Route::get('faq', 'HomePageController@faq');
 Route::get('contact', 'HomePageController@contact');
+
+// Profile
+Route::get('/profile', 'ProfileController@show');
+Route::get('/profile/edit', 'ProfileController@edit');
+Route::post('/profile/edit', 'ProfileController@update')->name('profile.edit');
 
 
 
