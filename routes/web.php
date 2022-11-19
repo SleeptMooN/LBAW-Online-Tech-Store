@@ -18,11 +18,13 @@ Route::get('faq', 'HomePageController@faq');
 Route::get('contact', 'HomePageController@contact');
 
 // Profile
-Route::get('/profile', 'ProfileController@show');
-Route::get('/profile/edit', 'ProfileController@edit');
-Route::post('/profile/edit', 'ProfileController@update')->name('profile.edit');
+Route::get('/users', 'UsersController@show');
+Route::get('/users/edit', 'UsersController@edit');
+Route::post('/users/edit', 'UsersController@update')->name('users.edit');
 
 
+// Cart
+Route::get('/cart', 'CartController@show');
 
 // Cards
 Route::get('cards', 'CardController@list');

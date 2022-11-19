@@ -16,8 +16,8 @@
                                     class="rounded-circle" width="150">
                                 <div class="mt-3">
                                     <h4>{{ Auth::user()->name }}</h4>
-                                    <p class="text-secondary mb-1">Regular User</p>
-                                    {{-- <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p> --}}
+                                    
+                                    
                                 </div>
                             </div>
                         </div>

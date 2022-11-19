@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use DB;
-use Flash;
 use App\User;
 use Auth;
 
-class ProfileController extends Controller
+
+class UsersController extends Controller
 {
     public function __construct(){
         $this->middleware('auth');
@@ -30,17 +30,22 @@ class ProfileController extends Controller
         ];
 
         DB::table('users')->where('id', Auth::id())->update($item);
+        
 
-        Flash::success('Item updated successfully.');
-
-        return redirect('/profile');
+        return redirect('/users')->withSuccess('User updated successfully');
     }
 
     public function edit() {
-        return view('profile.edit');
+        return view('users.edit');
     }
 
+   /* public function show($id) {
+        $profile = Profile::find($id);
+        $this->authorize('show', $profile);
+        return view('profile.show', ['profile' => $profile]);
+        
+    }*/
     public function show() {
-        return view('profile.show');
+        return view('users.show');
     }
 }

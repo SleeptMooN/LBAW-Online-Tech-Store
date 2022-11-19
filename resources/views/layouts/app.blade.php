@@ -37,7 +37,7 @@
                                     {{ Auth::user()->name }}
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{{ url('/profile') }}"> Profile</a></li>
+                                    <li><a class="dropdown-item" href="{{ url('/users') }}"> Profile</a></li>
                                     <li><a class="dropdown-item" href="{{ url('/orders') }}"> Orders</a></li>
                                     <li><a class="dropdown-item" href="{{ url('/wishlist') }}"> Wishlist</a></li>
                                     <li><a class="dropdown-item" href="{{ url('/logout') }}"> Logout</a></li>
