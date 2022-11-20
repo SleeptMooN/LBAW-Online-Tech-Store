@@ -1,6 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Models\Cart;
+use App\Models\Product;
+
+use Illuminate\Support\Facades\View;
+
+use Auth;
+
 
 
 class HomePageController extends Controller
@@ -11,7 +19,24 @@ class HomePageController extends Controller
    */
   public function index()
   {
-    return view('pages.home');
+    $id = Auth::id();
+
+    $cart = cart::join('product', 'product_id', '=', 'product.id')
+            ->where('users_id', $id)
+            ->get();
+
+    $smartphone = Product::where('category_id', 1)->take(10)->get();
+    $tablets = Product::where('category_id', 2)->take(10)->get();
+    $computers = Product::where('category_id', 3)->take(10)->get();
+    $accessories = Product::where('category_id', 4)->take(10)->get();
+    
+    return view('pages.home',[
+        'cartCount' => $cart->count(),
+        'smartphone' => $smartphone,
+        'computers' => $computers,
+        'accessories' => $accessories,
+        'tablets' => $tablets
+    ]);
   }
 
     /**

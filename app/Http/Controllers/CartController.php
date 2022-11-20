@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product_Cart;
+use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -16,14 +16,24 @@ class CartController extends Controller
         // get user id
         $id = Auth::id();
  
-        $total = 0;
-        // dd($total);  
+        $cart = cart::join('product', 'product_id', '=', 'product.id')
+                ->where('users_id', $id)
+                ->get();
 
-        return view('cart.index',[
-        
-            'total' => $total,
-        
-        ]);
+        $total = 0;
+
+    foreach ($cart as $item){
+        $total += $item->quantity * $item->price;
+}
+
+ // dd($total);  
+
+    return view('cart.index',[
+        'cartItems' => $cart,
+        'total' => $total,
+     
+    ]);
+
     }
 }
 

@@ -26,16 +26,13 @@ Route::post('/users/edit', 'UsersController@update')->name('users.edit');
 // Cart
 Route::get('/cart', 'CartController@show');
 
-// Cards
-Route::get('cards', 'CardController@list');
-Route::get('cards/{id}', 'CardController@show');
+// Product
+Route::get('/product/{id}', 'ProductController@show');
+Route::post('/product/addCart', 'ProductController@addToCart')->name('card.add');
+Route::post('/product/removeCart', 'ProductController@removeFromCart')->name('card.remove');
+Route::post('/product/clearCart', 'ProductController@clearCart')->name('card.clear');
+Route::post('/product/updateCartItem', 'ProductController@updateCart')->name('card.updateItem');
 
-// API
-Route::put('api/cards', 'CardController@create');
-Route::delete('api/cards/{card_id}', 'CardController@delete');
-Route::put('api/cards/{card_id}/', 'ItemController@create');
-Route::post('api/item/{id}', 'ItemController@update');
-Route::delete('api/item/{id}', 'ItemController@delete');
 
 // Authentication
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

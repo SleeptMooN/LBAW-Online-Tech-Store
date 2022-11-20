@@ -98,22 +98,16 @@
             <nav class="py-2 bg-light border-bottom">
                 <div class="container d-flex flex-wrap">
                     <ul class="nav me-auto">
-                        {{-- Categories --}}
-                    
-                        {{----------------}}
+                        
                     </ul>
                     <ul class="nav">
-                        <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Call us: +351
-                                999999999</a>
+                        <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Contact us: +351
+                                999999</a>
                         </li>
                     </ul>
                 </div>
             </nav>
-
-          
-            
-
-
+         
         </header>
         {{-- End Header Section --}}
 
