@@ -4,21 +4,36 @@
 
 ## A7: Web Resources Specification
 
-> Brief presentation of the artefact's goals.
+O objetivo deste artefacto é apresentar como a arquitetura da aplicação web a desenvolver é documentada, indicando o catálogo de recursos e as propriedades de cada recurso, incluindo: referências às interfaces gráficas, e o formato das respostas JSON.
 
 ### 1. Overview
 
-> Identify and overview the modules that will be part of the application.  
+Esta secção apresenta uma visão geral da aplicação web a implementar, onde são identificados os módulos e brevemente descritos.  
+
+| Módulo | Documentação |
+| ---  | ------ |
+| **M01: Authentication** | Recursos de Web associados autenticação dos utilizadores. Inclui as seguintes funcionalidades: login/logout, registo.  |
+| **M02: User Profiles** | Recursos de Web associados com a gestão de perfil de cada utilizador. Inclui as seguintes funcionalidades: ver e editar a informação do perfil de utilizador. |
+| **M03: Products** | Recursos de Web associados com os produtos da loja. Inclui as seguintes funcionalidades: Procurar e ver produto/s, informação do produto. |
+| **M04: Orders and Shopping Cart** | Recursos de Web associados com as encomendas ,inclui as seguintes funcionalidades:ver histórico de compras, ver encomenda e realizar checkout. Recursos de Web associados com o carrinho de compras, inclui as seguintes funcionalidades: adicionar, remover produtos e ver carrinho de compras.
+| **M05: Static Pages** | Recursos de Web associados com as páginas estáticas: about, contact,terms and conditions ,FAQ.|
 
 ### 2. Permissions
 
-> Define the permissions used by each module, necessary to access its data and features.  
+Esta secção apresenta as permissões usadas nos módulos para estabelecer as condições de acesso aos recursos.
+
+| Sigla de permissão | Permissão | Descrição |
+| ------------------ | --------- | --------- |
+| PUB                | Public    | Utilizadores sem qualquer privilégio |
+| USR                | User      | Utilizadores autênticados |
+| ADM                | Administrator | Administradores do sistema | 
+| OWN                | Owner | Utilizador dono da informação | 
 
 ### 3. OpenAPI Specification
 
 OpenAPI specification in YAML format to describe the web application's web resources.
 
-Link to the `a7_openapi.yaml` file in the group's repository.
+Link to the `a7_openapi.yaml` file in the group's repository: https://git.fe.up.pt/lbaw/lbaw2223/Lbaw22114/-/blob/main/Docs/EAP/a7_openapi.yaml
 
 
 ```yaml
@@ -78,8 +93,8 @@ Changes made to the first submission:
 1. ..
 
 ***
-GROUP21gg, DD/MM/2021
- 
-* Group member 1 name, email (Editor)
-* Group member 2 name, email
-* ...
+GROUP22114, 20/11/2022
+
+* António Pedro Cabral dos Santos, up201907156 up201907156@up.pt
+* João Margato Borlido Pereira, up201907007 up201907007@up.pt (editor)
+* Miguel Ângelo Pacheco Valente, up201704608 up201704608@up.pt
