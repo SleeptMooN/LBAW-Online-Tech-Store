@@ -240,12 +240,12 @@ INSERT INTO users VALUES (
   DEFAULT,
   'John Doe',
   '$2y$10$HfzIhGCCaxqyaIdGgjARSuOKAcm1Uy82YfLuNaajn6JrjLWy9Sj/W',
-  'admin@example.com',
+  'example@example.com',
   '99999999'
 ); -- Password is 1234. Generated using Hash::make('1234')
 
 -- Users
-INSERT INTO Users VALUES (DEFAULT,'Example','Example123','Example@example.com','987654321');
+INSERT INTO Users VALUES (DEFAULT,'Example','Example123','Example12@example.com','987654321');
 INSERT INTO Users VALUES (DEFAULT,' Elwood Ellis','tMF3sw6','wood34@gmmail.com','93697524');
 INSERT INTO Users VALUES (DEFAULT,' Tiffani Derek ','QJg4MehPa','tiderek@1232.com','95334314');
 INSERT INTO Users VALUES (DEFAULT,' Timmy Hattie ','MP2p7BhIH','hatie3231@de32.org','90853239');

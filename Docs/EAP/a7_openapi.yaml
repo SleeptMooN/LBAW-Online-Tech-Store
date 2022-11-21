@@ -389,7 +389,7 @@ paths:
 
 # ------------------------------------ M04 ------------------------------------
 
-  /users/cart:  ####### Cart ########
+  /cart:  ####### Cart ########
     get:
       operationId: R401
       summary: 'R401: View Shopping Cart'
@@ -410,7 +410,7 @@ paths:
         '404':
           description: 'Not Found. Show Not Found Page if it is an admin'
 
-  /api/users/cart/:
+  /api/cart/:
     get:
       operationId: R402
       summary: 'R402: Get cart api'
@@ -471,7 +471,7 @@ paths:
           description: "User not logged in or is logged in as an admin"
 
 
-  /api/users/cart/{id_Product}/remove/:
+  /product/removeCart:
     delete:
       operationId: R403
       summary: 'R403: Remove a product from cart API'
@@ -495,7 +495,7 @@ paths:
           description: "Product does not exist or is not in cart."
 
             
-  /api/users/cart/update/:
+  /product/updateCartItem:
     post:
       operationId: R404
       summary: 'R404: Set product amount on cart API'
@@ -529,7 +529,7 @@ paths:
         '422':
           description: "Product does not exist, or there is not enough stock."
 
-  /api/users/cart/add/:
+  /product/addCart:
     post:
       operationId: R405
       summary: 'R405 Add product amount to cart API'
