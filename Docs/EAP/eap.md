@@ -195,7 +195,7 @@ paths:
 
 # ------------------------------------ M02 ------------------------------------
 
-  /users/{id}: ####### view profile ########
+  /users: ####### view profile ########
    get:
      operationId: R201
      summary: 'R201: View user profile'
@@ -214,7 +214,7 @@ paths:
        '200':
          description: 'Ok. Show User Profile UI07'
 
-        ####### Edit profile ########
+  /users/edit:   
    put:
       operationId: R202
       summary: 'R202: Edit Profile Action'
@@ -809,7 +809,7 @@ Neste artefacto foram implementadas as funcionalidades mais básicas do projeto.
 
  [Link to prototype](https://lbaw22114.lbaw.fe.up.pt/login)
 
-  username: admin@example.com password: 1234
+  username: example@example.com password: 1234
 
 ---
 

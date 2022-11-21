@@ -8,6 +8,8 @@
 
 [EBD: Database Specification](./Docs/EBD/ebd.md)
 
+[EAP - Architecture Specification and Prototype](./Docs/EAP/eap.md)
+
 ---
 |Nome | Email |
 |----|----|

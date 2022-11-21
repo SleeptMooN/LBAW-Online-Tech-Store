@@ -157,7 +157,7 @@ paths:
 
 # ------------------------------------ M02 ------------------------------------
 
-  /users/{id}: ####### view profile ########
+  /users: ####### view profile ########
    get:
      operationId: R201
      summary: 'R201: View user profile'
@@ -176,7 +176,8 @@ paths:
        '200':
          description: 'Ok. Show User Profile UI07'
 
-        ####### Edit profile ########
+  /users/edit:   
+     ####### Edit profile ########
    put:
       operationId: R202
       summary: 'R202: Edit Profile Action'
