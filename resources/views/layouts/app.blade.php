@@ -41,8 +41,6 @@
                                     <li><a class="dropdown-item" href="{{ url('/orders') }}"> Orders</a></li>
                                     <li><a class="dropdown-item" href="{{ url('/wishlist') }}"> Wishlist</a></li>
                                     <li><a class="dropdown-item" href="{{ url('/logout') }}"> Logout</a></li>
-                                    
-
                                 </ul>
                             </div>
                         @else
@@ -73,8 +71,8 @@
                         </a>
 
 
-                        <form class="col-8 col-lg-4 mb-3 mb-lg-0 me-lg-3" action="/search" method="GET">
-                            <input type="text" name="query" class="form-control form-control-dark" placeholder="Search..."
+                        <form class="col-8 col-lg-4 mb-3 mb-lg-0 me-lg-3" action="/" method="GET">
+                            <input type="text" name="search" class="form-control form-control-dark" placeholder="Search..."
                                 aria-label="Search">
                         </form>
 
@@ -86,7 +84,7 @@
                                         d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                                 </svg>
                                 <span class="badge rounded-pill badge-notification bg-danger">
-                                 
+                                    0                        
                                 </span>
                             </a>
                             
@@ -102,7 +100,7 @@
                     </ul>
                     <ul class="nav">
                         <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Contact us: +351
-                                999999</a>
+                            9333333</a>
                         </li>
                     </ul>
                 </div>
@@ -120,9 +118,8 @@
         {{-- Start footer here --}}
         <footer>
             <div class="container">
-                <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                    <p class="col-md-4 mb-0 text-muted">&copy; 2022 OnlyT3ch, Inc</p>
-
+                <footer class="d-flex flex-wrap justify-content-between align-items-center py-4 my-4 border-top">
+                    <p class="col-md-4 mb-0 text-muted">&copy; 2022 OnlyT3ch, Ltd</p>
                     <a href="/"
                         class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
 
@@ -131,9 +128,7 @@
                                 <path
                                     d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
                             </svg>
-
                     </a>
-
                     <ul class="nav col-md-4 justify-content-end">
                         <li class="nav-item"><a href="{{ URL::to('faq') }}" class="nav-link px-2 text-muted">FAQ</a></li>
                         <li class="nav-item"><a href="{{ URL::to('terms') }}" class="nav-link px-2 text-muted">Terms and Conditions</a></li>

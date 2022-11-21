@@ -1,10 +1,10 @@
 @extends('users.index')
 
 @section('contentprofile')
-    <!-- Success message -->
-    @if (Session::has('success'))
+
+    @if (Session::has('status'))
         <div class="alert alert-success">
-            {{ Session::get('success') }}
+            {{ Session()->get('status') }}
         </div>
     @endif
 
@@ -38,10 +38,7 @@
                         </div>
                         <div class="col-sm-9 text-secondary">
                             <input type="text" class="form-control" name="phone" id="phone" value="{{ Auth::user()->phone }}">
-                        </div>
-                 
-                   
-                     
+                        </div>                 
                     </div>
                     <hr>
                     <div class="row">

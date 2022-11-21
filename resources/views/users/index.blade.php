@@ -12,24 +12,19 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
+                                <img src="img/default.png" alt="Admin"
                                     class="rounded-circle" width="150">
                                 <div class="mt-3">
-                                    <h4>{{ Auth::user()->name }}</h4>
-                                    
-                                    
+                                    <h4>{{ Auth::user()->name }}</h4>                      
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 @yield('contentprofile')
-                
-                
+                        
             </div>
-
         </div>
     </div>
 

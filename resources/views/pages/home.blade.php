@@ -16,14 +16,14 @@
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="5000">
                     <a href="/">
-                        <img src="https://static.pcdiga.com/media/Skrey_Slideshow/Slide_Image/p/i/pitaka_d.jpg"
-                            class="d-block w-100" alt="failed loading image">
+                        <img src="img/geforce.jpg"  
+                          class="d-block w-100 " alt="failed loading image"></img>
                     </a>
                 </div>
                 <div class="carousel-item" data-bs-interval="5000">
                     <a href="/">
                         <img src="https://static.pcdiga.com/media/Skrey_Slideshow/Slide_Image/m/a/macbook_pro_banner_d.jpg"
-                            class="d-block w-100 h-20" alt="failed loading image">
+                            class="d-block w-100 " alt="failed loading image">
                     </a>
                 </div>
                 <div class="carousel-item" data-bs-interval="5000">
@@ -78,13 +78,13 @@
         <p>
         <div class="card text-center">
             <div class="card-header" >
-            Accessories
+            Tablets
         </div>
         <p>
         <div class="container ">
             <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
-                @if ($accessories->count() != 0)
-                    @foreach ($accessories as $item)
+                @if ($tablets->count() != 0)
+                    @foreach ($tablets as $item)
                         <div class="col">
                             @include('components.productCard', ['item' => $item])
                         </div>
@@ -116,13 +116,13 @@
         <p>
         <div class="card text-center">
             <div class="card-header" >
-            Tablets
+            Accessories
         </div>
         <p>
         <div class="container ">
             <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
-                @if ($tablets->count() != 0)
-                    @foreach ($tablets as $item)
+                @if ($accessories->count() != 0)
+                    @foreach ($accessories as $item)
                         <div class="col">
                             @include('components.productCard', ['item' => $item])
                         </div>
@@ -137,21 +137,5 @@
     {{-- End Products --}}
 
 
-
-    {{-- Start Banner --}}
-    <section>
-        <div class="card text-center">
-            
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.
-
-            </div>
-        </div>
-    </section>
-    {{-- End Banner --}}
-
-
 @endsection
-
 

@@ -4,12 +4,9 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Models\Cart;
 use App\Models\Product;
-
 use Illuminate\Support\Facades\View;
 
 use Auth;
-
-
 
 class HomePageController extends Controller
 {
@@ -24,14 +21,13 @@ class HomePageController extends Controller
     $cart = cart::join('product', 'product_id', '=', 'product.id')
             ->where('users_id', $id)
             ->get();
-
+       
     $smartphone = Product::where('category_id', 1)->take(10)->get();
     $tablets = Product::where('category_id', 2)->take(10)->get();
     $computers = Product::where('category_id', 3)->take(10)->get();
     $accessories = Product::where('category_id', 4)->take(10)->get();
     
     return view('pages.home',[
-        'cartCount' => $cart->count(),
         'smartphone' => $smartphone,
         'computers' => $computers,
         'accessories' => $accessories,
@@ -67,6 +63,7 @@ class HomePageController extends Controller
    * Show the application contact page.
    *
    */
+  
   public function contact() {
     return view('pages.contact');
   }

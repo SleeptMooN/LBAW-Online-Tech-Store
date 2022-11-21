@@ -6,10 +6,6 @@
         {{-- <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-4">
             <h1>{{ $product->name }}</h1>
         </div> --}}
-
-
-
-
         <main class="mt-5 pt-4">
             <div class="container mt-2">
 
@@ -23,7 +19,6 @@
 
                     <div class="col-md-6 mb-4">
 
-                        <!--Content-->
                         <div class="p-4">
                             <h1>{{ $product->name }}</h1>
 
@@ -40,16 +35,13 @@
 
                             {{-- <p class="lead font-weight-bold">Description</p> --}}
 
-                            {{-- <p>
+                                 <p>
                                     {{ $product->description }}
-                                </p> --}}
+                                </p>
                         <div class="d-flex justify-content-left gap-3">
-
-
 
                             <form  action="{{ route('card.add') }}"
                                 method="POST">
-                                <!-- Default input -->
                                 @csrf
 
                                 <input type="hidden" value="{{ $product->id }}" name="id">
@@ -70,25 +62,12 @@
                                 </button>
                             </form>
                         </div>
-
-
                         </div>
-                        <!--Content-->
-
                     </div>
-                    <!--Grid column-->
-
                 </div>
-                <!--Grid row-->
-
                 <hr>
-
             </div>
         </main>
-        <!--Main layout-->
-
-
-
         <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-4 pl-1">
             <h1>Reviews</h1>
 

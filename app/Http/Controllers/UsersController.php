@@ -29,22 +29,16 @@ class UsersController extends Controller
             'phone' => $request->phone
         ];
 
-        DB::table('users')->where('id', Auth::id())->update($item);
-        
+        DB::table('users')->where('id', Auth::id())->update($item);      
 
-        return redirect('/users')->withSuccess('User updated successfully');
+        return redirect('/users')->with('status','User updated successfully');
     }
 
     public function edit() {
         return view('users.edit');
     }
 
-   /* public function show($id) {
-        $profile = Profile::find($id);
-        $this->authorize('show', $profile);
-        return view('profile.show', ['profile' => $profile]);
-        
-    }*/
+ 
     public function show() {
         return view('users.show');
     }

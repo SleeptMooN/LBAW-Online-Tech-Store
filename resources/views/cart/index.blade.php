@@ -44,10 +44,10 @@
                                         <td>
                                             <div class="price-wrap">
                                                 <var class="price">
-                                                    {{ $items->price * $items->quantity }}$
+                                                    {{ $items->price * $items->quantity }}€
                                                 </var>
                                                 <small class="text-muted">
-                                                    {{ $items->price }}$ each
+                                                    {{ $items->price }}€ each
                                                 </small>
                                             </div>
                                         </td>
@@ -62,7 +62,6 @@
                                         </form>
                                     </tr>
                                 @endforeach
-
                                 <tr>
                                     <td></td>
                                     <td></td>
@@ -93,7 +92,7 @@
                         <dl class="dlist-align">
                             <dt>Total:</dt>
                             <dd class="text-right ml-3">
-                                {{ $total }} $
+                                {{ $total }} €
                             </dd>
                         </dl>
                         <a href="{{ url()->previous() }}" class="btn btn-out btn-success btn-square btn-main mt-2"

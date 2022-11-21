@@ -13,7 +13,6 @@ class CartController extends Controller
     // public funcion
 
     public function show() {
-        // get user id
         $id = Auth::id();
  
         $cart = cart::join('product', 'product_id', '=', 'product.id')
@@ -26,14 +25,11 @@ class CartController extends Controller
         $total += $item->quantity * $item->price;
 }
 
- // dd($total);  
-
     return view('cart.index',[
         'cartItems' => $cart,
         'total' => $total,
      
     ]);
-
     }
 }
 
