@@ -809,7 +809,7 @@ Neste artefacto foram implementadas as funcionalidades mais básicas do projeto.
 
  [Link to prototype](https://lbaw22114.lbaw.fe.up.pt/login)
 
-  username: example@example.com password: 1234
+  Email: example@example.com Password: 1234
 
 ---
 

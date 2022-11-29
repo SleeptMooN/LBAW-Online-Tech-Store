@@ -71,7 +71,7 @@
                         </a>
 
 
-                        <form class="col-8 col-lg-4 mb-3 mb-lg-0 me-lg-3" action="/" method="GET">
+                        <form class="col-8 col-lg-4 mb-3 mb-lg-0 me-lg-3" action="/search" method="get">
                             <input type="text" name="search" class="form-control form-control-dark" placeholder="Search..."
                                 aria-label="Search">
                         </form>
