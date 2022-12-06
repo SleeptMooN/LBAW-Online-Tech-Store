@@ -10,6 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="icon" href="{!! asset('/img/Logo_OnlyT3ch-removebg.png') !!}"/>
 
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> --}}
@@ -51,25 +52,19 @@
                                 <a type="button" href="{{ url('/register') }}" class="btn btn-warning">Sign-up</a>
                             </li>
                         @endif
-
-
                     </ul>
                 </div>
             </nav>
-            <div class="p-3 bg-dark text-white">
+            <div class="p-4 bg-black text-white">
                 <div class="container">
                     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
                         <a href="/"
                             class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" fill="currentColor"
-                                class="bi bi-cpu mr" viewBox="0 0 16 16">
-                                <path
-                                    d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5 0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0zm-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3h-7zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
-                            </svg>
-                            <span class="fs-4">{{ config('app.name') }}</span>
+                            <img src="/img/Logo_OnlyT3ch-removebg.png"
+                                    class="rounded-circle" width="55">
+                            <span class="fs-3">{{ config('app.name') }}</span>
                         </a>
-
 
                         <form class="col-8 col-lg-4 mb-3 mb-lg-0 me-lg-3" action="/search" method="get">
                             <input type="text" name="search" class="form-control form-control-dark" placeholder="Search..."
@@ -93,17 +88,56 @@
                 </div>
             </div>
 
-            <nav class="py-2 bg-light border-bottom">
+            <nav class="py-4 bg-light border-bottom">
+                <div class="catg d-flex justify-content-center">
+                    <div class= "ms-3 me-3">
+                        <a class="d-flex flex-column fic text-dark text-decoration-none" href="/category/1" >
+                            <div class="bgo d-flex justify-content-center">
+                                <img src="/img/phone.jpeg" class="rounded-circle" width="70" height="70">
+                            </div>
+                            <span class="fw-bold text-sm-center">Smartphone</span>
+                        </a>    
+                    </div>
+                    <div class= "ms-3 me-3">
+                        <a class="d-flex flex-column fic text-dark text-decoration-none" href="/category/2" >
+                            <div class="bgo d-flex justify-content-center">
+                                <img src="/img/tablet.png" class="rounded-circle" width="70" height="70">
+                            </div>
+                            <span class="fw-bold text-sm-center">Tablets</span>
+                        </a>    
+                    </div>
+                    <div class= "ms-3 me-3 ">
+                        <a class="d-flex flex-column fic text-dark text-decoration-none" href="/category/3" >
+                            <div class="bgo d-flex justify-content-center">
+                                <img src="/img/pc.jpg" class="rounded-circle" width="70" height="70">
+                            </div>
+                            <span class="fw-bold text-sm-center">Computers</span>
+                        </a>    
+                    </div>
+                    <div class= "ms-3 me-3 ">
+                        <a class="d-flex flex-column fic text-dark text-decoration-none" href="/category/4" >
+                            <div class="bgo d-flex justify-content-center">
+                                <img src="/img/accessories.jpeg" class="rounded-circle" width="70" height="70">
+                            </div>
+                            <span class="fw-bold text-sm-center">Accessories</span>
+                        </a>    
+                    </div>
+                </div>
+            {{--    apagar 
                 <div class="container d-flex flex-wrap">
-                    <ul class="nav me-auto">
+                    <ul class="nav me-auto ">
+                        @foreach ($categories as $category)
+                            <li class="nav-item"><a href= "/category/{{$category->id}}"
+                                    class="nav-link link-dark px-2">{{ $category->name }}</a></li>
+                        @endforeach
                         
-                    </ul>
+                    </ul> 
                     <ul class="nav">
                         <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Contact us: +351
                             9333333</a>
                         </li>
                     </ul>
-                </div>
+                </div>--}}
             </nav>
          
         </header>

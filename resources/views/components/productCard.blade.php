@@ -1,5 +1,7 @@
+
 {{-- start card --}}
-<div class="card p-3">
+
+<div class="card p-3" >
     <img src="{{ $item->photo }}" class="card-img-top "
         alt="error loading image" onclick="location.href='/product/{{ $item->id }}'" style="cursor: pointer;">
     <div class="card-body" >
@@ -44,5 +46,6 @@
         </div>
     </div>
 </div>
+
 {{-- end card --}}
 

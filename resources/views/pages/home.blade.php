@@ -16,19 +16,19 @@
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="5000">
                     <a href="/">
-                        <img src="img/geforce.jpg"  
+                        <img src="https://static.pcdiga.com/media/Skrey_Slideshow/Slide_Image/n/v/nvidia_holidays22_d.jpg"  
                           class="d-block w-100 " alt="failed loading image"></img>
                     </a>
                 </div>
                 <div class="carousel-item" data-bs-interval="5000">
                     <a href="/">
-                        <img src="https://static.pcdiga.com/media/Skrey_Slideshow/Slide_Image/m/a/macbook_pro_banner_d.jpg"
+                        <img src="https://static.pcdiga.com/media/Skrey_Slideshow/Slide_Image/p/o/portateis_lenovo_thinkpad_d.jpg"
                             class="d-block w-100 " alt="failed loading image">
                     </a>
                 </div>
                 <div class="carousel-item" data-bs-interval="5000">
-                    <a href="/">
-                        <img src="https://static.pcdiga.com/media/Skrey_Slideshow/Slide_Image/p/c/pc_diga_1544x350_22.jpg"
+                    <a href="/product/12">
+                        <img src="https://static.pcdiga.com/media/Skrey_Slideshow/Slide_Image/l/e/lenovo_legion_xmas_d.jpg"
                             class="d-block w-100" alt="failed loading image">
                     </a>
                 </div>
@@ -135,6 +135,15 @@
     </section>
     {{----------------------------------------------------------------------------------------------}}
     {{-- End Products --}}
+    
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="https://static.pcdiga.com/media/Skrey_Slideshow/Slide_Image/m/a/macbook_pro_banner_d.jpg" alt="First slide">
+            </div>
+    </div>
+  </div>
+
 
 
 @endsection

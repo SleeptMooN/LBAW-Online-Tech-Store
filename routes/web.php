@@ -33,6 +33,9 @@ Route::post('/product/removeCart', 'ProductController@removeFromCart')->name('ca
 Route::post('/product/clearCart', 'ProductController@clearCart')->name('card.clear');
 Route::post('/product/updateCartItem', 'ProductController@updateCart')->name('card.updateItem');
 
+// Category
+Route::get('/category', 'CategoryController@show');
+Route::get('/category/{id}', 'CategoryController@products');
 
 // Authentication
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -41,4 +44,5 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('register', 'Auth\RegisterController@register');
 
+//search
 Route::get('search', 'SearchController@show')->name('search');

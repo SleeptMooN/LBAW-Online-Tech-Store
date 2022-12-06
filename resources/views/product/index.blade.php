@@ -2,10 +2,6 @@
 
 @section('content')
     <div class="container">
-
-        {{-- <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-4">
-            <h1>{{ $product->name }}</h1>
-        </div> --}}
         <main class="mt-5 pt-4">
             <div class="container mt-2">
 
@@ -22,7 +18,7 @@
                         <div class="p-4">
                             <h1>{{ $product->name }}</h1>
 
-                            <div class="card mb-4 mt-4" style="width: 20rem;">
+                            <div class="card mt-4" style="width: 30rem;">
                                 <div class="card-body">
                                     {{-- <h5 class="card-title">Card title</h5> --}}
                                     <h6 class="card-subtitle mb-2 text-muted">Description</h6>
@@ -32,23 +28,42 @@
 
                                 </div>
                             </div>
+                            <div class="d-flex justify-content-left gap-3">
+                            <div class="card mb-4 mt-4" style="width: 6.5rem;">
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-muted">Price</h6>
+                                    <p class="card-text">
+                                        {{ $product->price }} € 
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card mb-4 mt-4" style="width: 4.5rem;">
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-muted">Score</h6>
+                                    <p class="card-text">
+                                        {{ $product->score }} ★
+                                    </p>
+                                </div>
+                            </div>
+                            </div>
 
-                            {{-- <p class="lead font-weight-bold">Description</p> --}}
-
-                                 <p>
-                                    {{ $product->description }}
-                                </p>
-                        <div class="d-flex justify-content-left gap-3">
-
+                        <div class="d-flex justify-content-left gap-3">                           
+                                  <div class="input-group" style="width:130px">
+                                      <button class="btn btn-dark input-group-text">-</button>
+                                      <input type="text" class="form-control text-center bg-white" value="1" disabled>
+                                      <button class="btn btn-dark input-group-text">+</button>
+                                  </div>
                             <form  action="{{ route('card.add') }}"
                                 method="POST">
                                 @csrf
-
                                 <input type="hidden" value="{{ $product->id }}" name="id">
 
-                                <input type="number" value="1" class="form-control" style="width: 100px" name="quantity">
-                                <button class="btn btn-primary btn-md my-0 p " type="submit">Add to cart
-                                    <i class="fas fa-shopping-cart ml-1"></i>
+                                <button class="btn btn-dark" type="submit" name="send">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                                        <path
+                                        d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                                    </svg> 
+                                   
                                 </button>
                             </form>
                             

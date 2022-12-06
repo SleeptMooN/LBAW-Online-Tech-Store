@@ -12,12 +12,11 @@ class SearchController extends Controller
     public function show(Request $request){
 
         if($request->input('search')){
-            $products = Product::where('name','like','%'.$request->input('search').'%')->get();
+            $products = Product::where('name','ilike','%'.$request->input('search').'%')->get();
 
         }else{
             $products = Product::all();
         }
-
 
         return view('pages.SearchResults',['products' => $products]);
     }
