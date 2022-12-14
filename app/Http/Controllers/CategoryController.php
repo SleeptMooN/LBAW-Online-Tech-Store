@@ -22,7 +22,6 @@ class CategoryController extends Controller
 
     public function products($category) {
         
-        // $products = Product::where('categoryid', $category)->paginate(1)->get();
         $products = Product::where('category_id', $category)->simplePaginate(5);
 
         

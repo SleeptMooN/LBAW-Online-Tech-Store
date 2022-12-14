@@ -117,7 +117,7 @@
                     <div class= "ms-3 me-3 ">
                         <a class="d-flex flex-column fic text-dark text-decoration-none" href="/category/4" >
                             <div class="bgo d-flex justify-content-center">
-                                <img src="/img/accessories.jpeg" class="rounded-circle" width="70" height="70">
+                                <img src="/img/acc.png" class="rounded-circle" width="70" height="70">
                             </div>
                             <span class="fw-bold text-sm-center">Accessories</span>
                         </a>    

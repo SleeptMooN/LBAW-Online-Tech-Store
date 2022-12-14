@@ -37,7 +37,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="card mb-4 mt-4" style="width: 4.5rem;">
+                            <div class="card mb-4 mt-4" style="width: 6.5rem;">
                                 <div class="card-body">
                                     <h6 class="card-subtitle mb-2 text-muted">Score</h6>
                                     <p class="card-text">
@@ -85,6 +85,50 @@
         </main>
         <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-4 pl-1">
             <h1>Reviews</h1>
+            </div>
+            <div class="row d-flex justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-0 border" style="background-color: #f0f2f5;">
+                    <div class="card-body p-4">
+                        {{-- <div class="form-outline mb-4">
+                            <input type="text" id="addANote" class="form-control" placeholder="Type comment..." />
+                            <div class="mt-1">   
+                            <label class="form-label" for="addANote">Score</label>
+
+                            <input style="width: 80px" class="col-xs-2" type="number" value="1" min="1" max="10" name="newQuantity">
+                        </div> --}}
+
+                        @foreach ($reviews as $items)
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5>{{ $items->title }}</h5>
+                                    <p class="text-muted"> {{ $items->comment }}</p>
+
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex flex-row align-items-center">
+
+                                            <p class="small mb-0 ms-2">{{ $username->name }}</p>
+                                        </div>
+                                        <div class="d-flex flex-row align-items-center text-primary">
+                                            <p class="small mb-0">{{ $items->score }}</p>
+                                            <p class="small mb-0">/5</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        @endforeach
+                        <div class="d-flex justify-content-center mt-4">
+                            {{ $reviews->links() }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  
+
 
     </div>
 @endsection

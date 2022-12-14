@@ -10,9 +10,11 @@ class SearchController extends Controller
 {
 
     public function show(Request $request){
+        $search = $request->query('query');
 
         if($request->input('search')){
-            $products = Product::where('name','ilike','%'.$request->input('search').'%')->get();
+            $products = Product::query()->where('name','ilike','%'.$request->input('search').'%')
+                                        ->orWhere('description','ilike','%'.$request->input('search').'%')->orderby('id')->get();
 
         }else{
             $products = Product::all();

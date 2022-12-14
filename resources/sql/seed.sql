@@ -357,14 +357,15 @@ INSERT INTO Orders VALUES (7, '2022-08-23', 760.90, 'Delivered', 5, 4, 3);
 INSERT INTO Orders VALUES (8, '2022-08-23', 990.90, 'Shipping', 8, 8, 4);
 
 -- Review
-INSERT INTO Review VALUES (1,'Title', 'comment' , DEFAULT, 4.6, 3, 4);
+INSERT INTO Review VALUES (1,'Title', 'comment' , DEFAULT, 4.2, 3, 4);
 INSERT INTO Review VALUES (2,'Title', 'comment' , '2022-10-17', 5, 15, 3);
 INSERT INTO Review VALUES (3,'Title', 'comment' , '2022-10-2', 3.6, 5, 4);
 INSERT INTO Review VALUES (4,'Title', 'comment' , '2022-06-7', 4.2, 8, 5);
 INSERT INTO Review VALUES (5,'Title', 'comment' , '2022-11-2', 4.7, 2, 8);
 INSERT INTO Review VALUES (6,'Title', 'comment' , '2022-04-23', 4, 3, 9);
-INSERT INTO Review VALUES (7,'Title', 'comment' , '2022-07-1', 5, 7, 10);
+INSERT INTO Review VALUES (7,'Title', 'comment' , '2022-07-1', 4.9, 7, 10);
 INSERT INTO Review VALUES (8,'Title', 'comment' , '2022-03-3', 3.9, 5, 11);
+INSERT INTO Review VALUES (9,'Title', 'comment' , '2022-07-1', 4.2, 2, 10);
 
 -----------------------------------------
 -- END
