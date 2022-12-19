@@ -123,21 +123,6 @@
                         </a>    
                     </div>
                 </div>
-            {{--    apagar 
-                <div class="container d-flex flex-wrap">
-                    <ul class="nav me-auto ">
-                        @foreach ($categories as $category)
-                            <li class="nav-item"><a href= "/category/{{$category->id}}"
-                                    class="nav-link link-dark px-2">{{ $category->name }}</a></li>
-                        @endforeach
-                        
-                    </ul> 
-                    <ul class="nav">
-                        <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Contact us: +351
-                            9333333</a>
-                        </li>
-                    </ul>
-                </div>--}}
             </nav>
          
         </header>

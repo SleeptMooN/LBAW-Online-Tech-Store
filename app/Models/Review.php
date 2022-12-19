@@ -11,8 +11,21 @@ class Review extends Model
 
     protected $table = "review";
 
+    protected $dates = ['date'];
+
+    protected $fillable = [
+        'title',
+        'comment',
+        'score',
+    ];
+
     public function products()
     {
        return $this->belongsTo('App\Models\Product');
+    }
+
+    public function users()
+    {
+       return $this->belongsTo('App\Models\User');
     }
 }

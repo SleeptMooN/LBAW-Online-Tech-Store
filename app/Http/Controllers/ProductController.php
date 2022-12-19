@@ -101,24 +101,15 @@ class ProductController extends Controller
     public function show($id){
         $product = Product::where('id', $id)->get();
         $reviews = Review::where('product_id',$id)->simplePaginate(4);
-        $username = User::find($id);
 
         
         return view('product.index', [
             'product' => $product[0],
-            'reviews' => $reviews,
-            'username' => $username
+            'reviews' => $reviews
         ]);
     }
     public function redirectToHome(){
         return redirect('/');
-    }
-
-    public function product(){
-        return $this->hasMany('App\Models\Category');
-    }
-    public function cart(){
-        return $this->hasMany('App\Models\Cart');
     }
  
 }

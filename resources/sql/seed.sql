@@ -52,7 +52,7 @@ create table Review(
   id SERIAL PRIMARY KEY,
   title TEXT NOT NULL,
   comment TEXT NOT NULL,
-  creationDate TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
+  date timestamp NOT NULL DEFAULT NOW(),
   score FLOAT CHECK (score >= 0 AND score <= 5),
   users_id INTEGER REFERENCES Users(id) ON DELETE CASCADE,
   product_id INTEGER REFERENCES Product(id)
@@ -67,7 +67,7 @@ create table Wishlist(
 create table Purchase(
   id SERIAL PRIMARY KEY,
   totalCost FLOAT NOT NULL CHECK (totalCost > 0),
-  purchaseDate TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
+  date TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
   quantity INTEGER CHECK (quantity >= 0),
   product_id INTEGER REFERENCES Product(id)
 );
