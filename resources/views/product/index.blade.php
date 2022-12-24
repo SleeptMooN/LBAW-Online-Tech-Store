@@ -49,9 +49,10 @@
 
                         <div class="d-flex justify-content-left gap-3">                           
                                   <div class="input-group" style="width:130px">
-                                      <button class="btn btn-dark input-group-text">-</button>
-                                      <input type="text" class="form-control text-center bg-white" value="1" disabled>
-                                      <button class="btn btn-dark input-group-text">+</button>
+                                      <button id="dec" class="btn btn-dark input-group-text">-</button>
+                                      <input id="qty" type="text" class="form-control text-center bg-white input-qty" value="1" disabled>
+                                      <button id="add" class="btn btn-dark input-group-text">+</button>
+
                                   </div>
                             <form  action="{{ route('card.add') }}"
                                 method="POST">

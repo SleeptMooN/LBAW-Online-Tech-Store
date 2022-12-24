@@ -178,3 +178,24 @@ function createItem(item) {
 }
 
 addEventListeners();
+
+$(document).ready(function(){
+  const addbtn = document.getElementById('add')
+  addbtn.addEventListener("click", function(){
+      const qty = document.getElementById('qty')
+      if(qty.value < 10)
+          qty.value = parseInt(qty.value)+1
+  })
+
+  const decbtn = document.getElementById('dec')
+  decbtn.addEventListener("click", function(){
+      const qty = document.getElementById('qty')
+      if(qty.value > 1)
+          qty.value = parseInt(qty.value)-1
+  })
+
+
+
+});
+
+
