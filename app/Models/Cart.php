@@ -7,11 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cart extends Model
 {
+    public $timestamps = true;
     use HasFactory;
     protected $table = "cart";
 
-    public function products()
+    public function product()
     {
-       return $this->hasMany('App\Models\Product');
+       return $this->belongsTo('App\Models\Product');
     }
 }
+

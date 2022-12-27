@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <main class="mt-5 pt-4">
+        <main class="mt-5 pt-4 product_data">
             <div class="container mt-2">
 
                 <div class="row wow fadeIn">
@@ -47,28 +47,27 @@
                             </div>
                             </div>
 
-                        <div class="d-flex justify-content-left gap-3">                           
+                        <div class="d-flex justify-content-left gap-3">  
+                                  <input type="hidden" value= "{{$product->id}}" class="prod_id">                         
                                   <div class="input-group" style="width:130px">
-                                      <button id="dec" class="btn btn-dark input-group-text">-</button>
+                                      <button class="btn btn-dark input-group-text dec_btn ">-</button>
                                       <input id="qty" type="text" class="form-control text-center bg-white input-qty" value="1" disabled>
-                                      <button id="add" class="btn btn-dark input-group-text">+</button>
+                                      <button class="btn btn-dark input-group-text add_btn">+</button>
 
                                   </div>
-                            <form  action="{{ route('card.add') }}"
-                                method="POST">
-                                @csrf
+                           
                                 <input type="hidden" value="{{ $product->id }}" name="id">
 
-                                <button class="btn btn-dark" type="submit" name="send">
+                                <button class="btn btn-dark addToCartBtn" type="submit" name="send" > add to cart
                                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
                                         <path
                                         d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
                                     </svg> 
                                    
                                 </button>
-                            </form>
+                          
                             
-                                @csrf
+                                
                                 <input type="hidden" value="{{ $product->id }}" name="id">
 
                                 <button class="btn btn-warning" type="submit" name="send">
@@ -84,6 +83,7 @@
                 <hr>
             </div>
         </main>
+
         @if(!$reviews->isEmpty())
         <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-4 pl-1">
             <h1>Reviews</h1>

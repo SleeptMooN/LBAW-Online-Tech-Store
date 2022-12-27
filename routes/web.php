@@ -25,6 +25,10 @@ Route::post('/users/edit', 'UsersController@update')->name('users.edit');
 
 // Cart
 Route::get('/cart', 'CartController@show');
+Route::post('/add-to-cart', 'CartController@addProduct');
+Route::post('/delete-cart-item', 'CartController@delProduct');
+Route::post('/update-cart', 'CartController@updatecart');
+
 
 // Product
 Route::get('/product/{id}', 'ProductController@show');
