@@ -50,3 +50,5 @@ Route::post('register', 'Auth\RegisterController@register');
 
 //search
 Route::get('search', 'SearchController@show')->name('search');
+
+Route::get('checkout', 'CheckoutController@index')->name('checkout');
