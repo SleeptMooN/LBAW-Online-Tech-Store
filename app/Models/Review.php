@@ -9,6 +9,9 @@ class Review extends Model
 {
     use HasFactory;
 
+    // Don't add create and update timestamps in database.
+    public $timestamps  = false;
+
     protected $table = "review";
 
     protected $dates = ['date'];

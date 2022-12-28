@@ -9,7 +9,11 @@ class Product extends Model
 {
     use HasFactory;
 
+    // Don't add create and update timestamps in database.
+    public $timestamps  = false;
+
     protected $table = "product";
+    protected $fillable = ['name', 'description', 'price', 'tsvectors'];
 
     
     public function cart()

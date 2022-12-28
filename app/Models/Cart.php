@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cart extends Model
 {
-    public $timestamps = true;
     use HasFactory;
+    
+    public $timestamps  = false;
     protected $table = "cart";
 
     public function product()

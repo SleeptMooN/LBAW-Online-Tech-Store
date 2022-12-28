@@ -21,9 +21,9 @@
                                 </tr>
                             </thead>
                         
+                        </table>
                             @php $total = 0; @endphp
                             @foreach ($cartitems as $items)       
-                         </table>
                             <div class="row product_data mt-3 mb-3 ">
                                 <div class="col-md-2 mt-4">
                                 <img src="{{ $items->product->photo }}" height="80px" width="80px" class="img-fluid" 
