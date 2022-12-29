@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
+
 class CheckoutController extends Controller
 {
 
@@ -34,9 +35,9 @@ class CheckoutController extends Controller
         $order->name = $request->input('name');
         $order->email = $request->input('email');
         $order->phone = $request->input('phone');
-        $order->users_id = Auth::id();
+        //$order->users_id = Auth::id();
         $order-> save();
-        
+
         $address = new Address();
         $address->housenumber = $request->input('house');
         $address->postalcode = $request->input('postal');
@@ -44,18 +45,22 @@ class CheckoutController extends Controller
         $address->country = $request->input('country');
         $address->users_id = Auth::id();
         $address->save();
-        
+
+
         $cartitems = Cart::where('users_id',Auth::id())->get();
-        foreach($cartitems as $items){
+        foreach($cartitems as $item){
             Purchase::create([
                 'orders_id'=>$order->id,
-                'product_id'=>$items->product_id,
-                'quantity'=>$items->quantity,
-                'totalcost'=>$items->product->price,
+                'product_id'=>$item->product_id,
+                'quantity'=>$item->quantity,
+                'totalcost'=>$item->product->price,
             ]);
 
+            $product = Product::where('id',$item->product_id)->first();
+            $product->update();
             
         } 
+
 
         $cartitems = Cart::where('users_id',Auth::id())->get();
         Cart::destroy($cartitems); 

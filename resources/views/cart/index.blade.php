@@ -14,9 +14,9 @@
                             <thead class="text-muted">
                                 <tr class="small text-uppercase">
                                     <th scope="col" width="300">Image</th>
-                                    <th scope="col" width="600">Product</th>
-                                    <th scope="col" width="250">Quantity</th>
-                                    <th scope="col" width="550">Price</th>
+                                    <th scope="col" width="500">Product</th>
+                                    <th scope="col" width="300">Price</th>
+                                    <th scope="col" width="450">Quantity</th>
                                     <th scope="col" class="text-right d-none d-md-block"></th>
                                 </tr>
                             </thead>
@@ -33,7 +33,15 @@
                                 <div class="col-md-4 mt-4">
                                     <h3> {{ $items->product->name }} </h3>
                                 </div> 
-                             <div class="col-md-2 mt-4">  
+                                <div class="col-md-2 mt-4">
+                                                <div class="price">
+                                                    {{ $items->product->price * $items->quantity }}€
+                                                </div>
+                                                <small class="text-muted">
+                                                    {{ $items->product->price }}€ each
+                                                </small>
+                             </div>
+                             <div class="col-md-2 mt-3">  
                                 <input type="hidden" value= "{{$items->product_id}}" class="prod_id">
                                  @if($items->product->quantity >= $items->quantity)                                                         
                                 <div class="container mt-2 input-group" style="width:130px">
@@ -43,31 +51,25 @@
                                   </div>
                              </div>
                              
-                                <div class="col-md-2 mt-4">
-                                                <div class="price">
-                                                    {{ $items->product->price * $items->quantity }}€
-                                                </div>
-                                                <small class="text-muted">
-                                                    {{ $items->product->price }}€ each
-                                                </small>
-                             </div>
+                            
                              @php $total += $items->product->price*$items->quantity ; @endphp
                              @else
+                             
                                  <h6>Out of stock</h6>
                              @endif
                              
-                             <div class="col md-2">
+                             <div class="col md-2 mt-2">
                                  <button  class="btn btn-danger delete-cart-item mt-3"> Remove </button>
                             </div>
                          </div> 
                         @endforeach
                     </div>   
-                    <div class="card-footer mt-3">
-                        <h4> Total Price = {{ $total }} €
-                            <a href="{{ url('checkout') }}" class="btn btn-dark float-end" > Proceed to checkout </a>
-                        </h4>
-                   </div>
                 </div>   
+                <div class="card-footer mt-3">
+                    <h4> Total Price = {{ $total }} €
+                        <a href="{{ url('checkout') }}" class="btn btn-dark float-end" > Proceed to checkout </a>
+                    </h4>
+               </div>
             </div>
         </div>
     </div>
