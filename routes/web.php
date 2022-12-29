@@ -52,3 +52,4 @@ Route::post('register', 'Auth\RegisterController@register');
 Route::get('search', 'SearchController@show')->name('search');
 
 Route::get('checkout', 'CheckoutController@index')->name('checkout');
+Route::post('place-order','CheckoutController@placeorder')->name('place-order');

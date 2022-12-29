@@ -64,30 +64,32 @@ create table Wishlist(
   quantity INTEGER CHECK (quantity >= 0)
 );
 
+
+create table Orders(
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  email VARCHAR(128) NOT NULL,
+  phone INT, 
+  orderDate TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
+  status TEXT NOT NULL DEFAULT 'Processing',
+  users_id INTEGER REFERENCES Users(id),
+  address_id INTEGER REFERENCES Address(id) ON DELETE CASCADE,
+  CONSTRAINT status CHECK (status IN ('Processing', 'Shipping', 'Delivered'))
+);
+
 create table Purchase(
   id SERIAL PRIMARY KEY,
   totalCost FLOAT NOT NULL CHECK (totalCost > 0),
   date TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
   quantity INTEGER CHECK (quantity >= 0),
-  product_id INTEGER REFERENCES Product(id)
+  product_id INTEGER REFERENCES Product(id),
+  orders_id INTEGER REFERENCES Orders(id) ON DELETE CASCADE
 );
 
 create table ProductPurchase(
   product_id INTEGER REFERENCES Product(id),
   purchase_id INTEGER REFERENCES Purchase(id),
   PRIMARY KEY(product_id, purchase_id)
-);
-
-
-create table Orders(
-  id SERIAL PRIMARY KEY,
-  orderDate TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
-  cost FLOAT NOT NULL CHECK (cost > 0),
-  status TEXT NOT NULL,
-  users_id INTEGER REFERENCES Users(id),
-  address_id INTEGER REFERENCES Address(id) ON DELETE CASCADE,
-  purchase_id INTEGER REFERENCES Purchase(id) ON DELETE CASCADE,
-  CONSTRAINT status CHECK (status IN ('Processing', 'Shipping', 'Delivered'))
 );
 
 create table Cart(
@@ -273,16 +275,8 @@ INSERT INTO AdminUsers VALUES (3);
 INSERT INTO About VALUES (1, 'onlyt3ch@gmail.com', 9333333);
 
 -- Address
-INSERT INTO Address VALUES (1, 2, '5100-123', 'Porto', 'Portugal', 1);
-INSERT INTO Address VALUES (2, 109, '2340-12', 'Madrid', 'Spain', 2);
-INSERT INTO Address VALUES (3, 2343, '7123-134', 'London', 'England', 3);
-INSERT INTO Address VALUES (4, 543, '4523-234', 'Lisbon', 'Portugal', 4);
-INSERT INTO Address VALUES (5, 214, '1232-123', 'Paris', 'France', 5);
-INSERT INTO Address VALUES (6, 65, '4324-765', 'Aveiro', 'Portugal', 6);
-INSERT INTO Address VALUES (7, 123, '2341-543', 'Roma', 'Italy', 7);
-INSERT INTO Address VALUES (8, 7657, '3432-353', 'Algarve', 'Portugal', 8);
-INSERT INTO Address VALUES (9, 342, '4321-543', 'New York', 'USA', 9);
-INSERT INTO Address VALUES (10, 5646, '2414-543', 'Berlim', 'Germany', 10);
+--INSERT INTO Address VALUES (1, 2, '5100-123', 'Porto', 'Portugal', 1);
+
 
 -- Category
 INSERT INTO Category VALUES (1, 'Smartphones');
@@ -323,38 +317,16 @@ INSERT INTO Wishlist VALUES (12, 8,3);
 -- Cart
 INSERT INTO Cart VALUES (DEFAULT,4,5,1);
 
--- Purchase
-INSERT INTO Purchase VALUES (1,321.32,'2022-10-4',2,2);
-INSERT INTO Purchase VALUES (2,121.36,'2022-09-1',1,4);
-INSERT INTO Purchase VALUES (3,2321.32,'2022-05-3',3,5);
-INSERT INTO Purchase VALUES (4,1221.32,'2022-08-2',1,3);
-INSERT INTO Purchase VALUES (5,421.32,'2022-10-21',2,3);
-INSERT INTO Purchase VALUES (6,821.32,'2022-11-12',2,10);
-
---ProductPurchase
-INSERT INTO ProductPurchase VALUES (1, 4);
-INSERT INTO ProductPurchase VALUES (5, 4);
-INSERT INTO ProductPurchase VALUES (3, 4);
-INSERT INTO ProductPurchase VALUES (8, 4);
-INSERT INTO ProductPurchase VALUES (6, 4);
-INSERT INTO ProductPurchase VALUES (2, 5);
-INSERT INTO ProductPurchase VALUES (2, 6);
-INSERT INTO ProductPurchase VALUES (5, 5);
-INSERT INTO ProductPurchase VALUES (10, 6);
-INSERT INTO ProductPurchase VALUES (12, 6);
-INSERT INTO ProductPurchase VALUES (11, 6);
-
 
 -- Order
-INSERT INTO Orders VALUES (1, '2022-08-23', 390.90, 'Processing', 7, 1, 4);
-INSERT INTO Orders VALUES (2, DEFAULT, 3920.90, 'Delivered', 8, 6, 5);
-INSERT INTO Orders VALUES (3, '2022-08-23', 1390.99, 'Shipping', 4, 2, 6);
-INSERT INTO Orders VALUES (4, '2022-08-23', 320.99, 'Processing', 13, 3, 6);
-INSERT INTO Orders VALUES (5, DEFAULT, 1320.90, 'Shipping', 15, 7, 1);
-INSERT INTO Orders VALUES (6, '2022-08-23', 230.90, 'Processing', 11, 9, 2);
-INSERT INTO Orders VALUES (7, '2022-08-23', 760.90, 'Delivered', 5, 4, 3);
-INSERT INTO Orders VALUES (8, '2022-08-23', 990.90, 'Shipping', 8, 8, 4);
+--INSERT INTO Orders VALUES (1,'john','jj@jj.com','987654321', '2022-08-23','Processing', 7, 1);
 
+
+-- Purchase
+--INSERT INTO Purchase VALUES (1,321.32,'2022-10-4',2,2,1);
+
+--ProductPurchase
+--INSERT INTO ProductPurchase VALUES (1, 1);
 -- Review
 INSERT INTO Review VALUES (1,'Title', 'comment' , DEFAULT, 4.2, 3, 4);
 INSERT INTO Review VALUES (2,'Title', 'comment' , '2022-10-17', 5, 15, 3);
