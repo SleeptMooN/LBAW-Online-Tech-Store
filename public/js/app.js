@@ -181,112 +181,109 @@ addEventListeners();
 
 
 $(document).ready(function(){ 
-    $('.addToCartBtn').click(function (e){
-        e.preventDefault();
 
-        var product_id = $(this).closest('.product_data').find('.prod_id').val();
-        var quantity = $(this).closest('.product_data').find('.input-qty').val();  
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-
-        $.ajax({
-            method: "POST",
-            url: '/add-to-cart',
-            data: {
-                'product_id': product_id,
-                'quantity': quantity,
-            },
-            success:function(response){
-                alert(response.status);
-            }
-        });          
-    });
-    $('.delete-cart-item').click(function (e){
+  document.querySelectorAll('.addToCartBtn').forEach(function(element) {
+    element.addEventListener('click', function(e) {
       e.preventDefault();
-
-      var product_id = $(this).closest('.product_data').find('.prod_id').val();  
-
-      $.ajaxSetup({
-          headers: {
-              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          }
-      });
-
-
-      $.ajax({
-          method: "POST",
-          url: '/delete-cart-item',
-          data: {
-              'product_id': product_id,
-          },
-          success:function(response){
-              window.location.reload();
-              alert(response.status);
-          }
-      });          
+  
+      var product_id = this.closest('.product_data').querySelector('.prod_id').value;
+      var quantity = this.closest('.product_data').querySelector('.input-qty').value;
+  
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '/add-to-cart');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.setRequestHeader('X-CSRF-TOKEN', document.querySelector('meta[name="csrf-token"]').getAttribute('content'));
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          var response = JSON.parse(xhr.responseText);
+          alert(response.status);
+        }
+      };
+      xhr.send(JSON.stringify({
+        product_id: product_id,
+        quantity: quantity,
+      }));
+    });
   });
+  
+    document.querySelectorAll('.delete-cart-item').forEach(function(element) {
+      element.addEventListener('click', function(e) {
+        e.preventDefault();
+    
+        var product_id = this.closest('.product_data').querySelector('.prod_id').value;
+    
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/delete-cart-item');
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader('X-CSRF-TOKEN', document.querySelector('meta[name="csrf-token"]').getAttribute('content'));
+        xhr.onload = function() {
+          if (xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            window.location.reload();
+            alert(response.status);
+          }
+        };
+        xhr.send(JSON.stringify({
+          product_id: product_id,
+        }));
+      });
+    });
+    
+   
+      document.querySelectorAll('.add_btn').forEach(function(element) {
+        element.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          var add_value = this.closest('.product_data').querySelector('.input-qty').value;
+          var value = parseInt(add_value, 10);
+          value = isNaN(value) ? 0 : value;
+          if (value < 10) {
+            value++;
+            this.closest('.product_data').querySelector('.input-qty').value = value;
+          }
+        });
+      });
+      
     
 
-  $('.add_btn').click(function (e){
-    e.preventDefault();
-
-    //var add_value = $('.input-qty').val();
-    var add_value = $(this).closest('.product_data').find('.input-qty').val();
-    var value = parseInt(add_value,10);
-    value = isNaN(value) ? 0 : value;
-    if(value < 10)
-    {
-      value++;
-      //$('.input-qty').val(value);
-      $(this).closest('.product_data').find('.input-qty').val(value);
-    }
-  });
-
-  $('.dec_btn').click(function (e){
-    e.preventDefault();
-
-    //var dec_value = $('.input-qty').val();
-    var dec_value = $(this).closest('.product_data').find('.input-qty').val();
-    var value = parseInt(dec_value,10);
-    value = isNaN(value) ? 0 : value;
-    if(value > 1)
-    {
-      value--;
-      //$('.input-qty').val(value);
-      $(this).closest('.product_data').find('.input-qty').val(value);
-    }
-  });
-
-
-  $('.changeQuantity').click(function (e){
-    e.preventDefault();
-
-    var product_id = $(this).closest('.product_data').find('.prod_id').val();
-    var qty = $(this).closest('.product_data').find('.input-qty').val();
-    data={
-      'product_id' : product_id,
-      'quantity': qty,
-    }
-
-    $.ajaxSetup({
-      headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  document.querySelectorAll('.dec_btn').forEach(function(element) {
+    element.addEventListener('click', function(e) {
+      e.preventDefault();
+  
+      var dec_value = this.closest('.product_data').querySelector('.input-qty').value;
+      var value = parseInt(dec_value, 10);
+      value = isNaN(value) ? 0 : value;
+      if (value > 1) {
+        value--;
+        this.closest('.product_data').querySelector('.input-qty').value = value;
       }
+    });
   });
+  
 
-    $.ajax({
-      method: "POST",
-      url: '/update-cart',
-      data: data,
-      success:function(){
-          window.location.reload();
+
+ document.querySelectorAll('.changeQuantity').forEach(function(element) {
+  element.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    var product_id = this.closest('.product_data').querySelector('.prod_id').value;
+    var qty = this.closest('.product_data').querySelector('.input-qty').value;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/update-cart');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('X-CSRF-TOKEN', document.querySelector('meta[name="csrf-token"]').getAttribute('content'));
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        window.location.reload();
       }
+    };
+    xhr.send(JSON.stringify({
+      product_id: product_id,
+      quantity: qty,
+    }));
   });
 });
+
 
 });
