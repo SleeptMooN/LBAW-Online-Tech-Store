@@ -1,5 +1,4 @@
 
-
 function encodeForAjax(data) {
   if (data == null) return null;
   return Object.keys(data).map(function(k){

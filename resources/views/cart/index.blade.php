@@ -9,6 +9,7 @@
         
             <div class="container my-5">
                 <div class="card shadow">
+                    @if($cartitems->count() > 0)
                     <div class="table-responsive p-3">
                         <table class="table table-borderless table-shopping-cart">
                             <thead class="text-muted">
@@ -71,6 +72,13 @@
                     </h4>
                </div>
             </div>
+            @else
+                <div class="card-body text-center">
+                    <h2> Cart empty </h2>
+                    <a href="{{ url('/') }}" class="btn btn-outline-dark"> Continue shopping</a>
+
+                </div>
+            @endif
         </div>
     </div>
 

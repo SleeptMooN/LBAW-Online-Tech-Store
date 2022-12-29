@@ -13,11 +13,7 @@ class Purchase extends Model
     protected $table = "purchase";
     protected $fillable = ['totalcost', 'quantity', 'product_id','orders_id'];
 
-    public function order()
-    {
-       return $this->belongsTo('App\Models\Order');
-    }
-
+    
     public function products()
     {
        return $this->belongsTo('App\Models\Product');

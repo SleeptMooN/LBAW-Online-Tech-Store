@@ -12,6 +12,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
+use Flash;
+
 
 class CheckoutController extends Controller
 {
@@ -35,7 +37,16 @@ class CheckoutController extends Controller
         $order->name = $request->input('name');
         $order->email = $request->input('email');
         $order->phone = $request->input('phone');
+        $order->trackingnumber = rand(111,9999);
         //$order->users_id = Auth::id();
+        
+        $total=0;
+        $cartitems_total = Cart::where('users_id',Auth::id())->get();
+        foreach($cartitems_total as $prod){
+            $total += $prod->product->price;
+        }
+        
+        $order->totalcost = $total;
         $order-> save();
 
         $address = new Address();
@@ -61,11 +72,28 @@ class CheckoutController extends Controller
             
         } 
 
+        $order->users_id = Auth::id();
+        $order-> save();
 
         $cartitems = Cart::where('users_id',Auth::id())->get();
         Cart::destroy($cartitems); 
 
-        return redirect('/')->with('status',"Order placed Successfully");
+        Flash::success('Order placed Successfully!');
+        return redirect('/');
+    }
+
+    public function showorders(){
+
+        $orders = Order::where('users_id',Auth::id())->get();
+        return view('order.orders',compact('orders'));
+    }
+
+    public function vieworder($id){
+        //$orders = Order::where('users_id',Auth::id())->get();
+        $address = Address::where('users_id',Auth::id())->get();
+        $orders = Order::where('id',$id)->where('users_id',Auth::id())->first();
+        return view('order.myorder',compact('orders'));
+
     }
     
 }

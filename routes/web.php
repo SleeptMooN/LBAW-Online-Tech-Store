@@ -53,3 +53,7 @@ Route::get('search', 'SearchController@show')->name('search');
 
 Route::get('checkout', 'CheckoutController@index')->name('checkout');
 Route::post('place-order','CheckoutController@placeorder')->name('place-order');
+Route::get('orders','CheckoutController@showorders')->name('orders');
+Route::get('view-order/{id}','CheckoutController@vieworder')->name('view-order');
+
+

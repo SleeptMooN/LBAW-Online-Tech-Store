@@ -6,6 +6,7 @@
     <form action="{{url('place-order')}}" method="POST">
                 {{ csrf_field() }}
         <div class="row">
+            @if($cartitems->count() > 0)
             <div class="col-md-7">
                 <div class="card">
                     <div class="card-body">
@@ -74,6 +75,13 @@
                         <button type ="submit" class="btn btn-dark w-100">Place Order</button>
                     </div>
                 </div>
+                @else
+                <div class="card-body text-center">
+                    <h2> No products added to cart, theres nothing to buy! </h2>
+                    <a href="{{ url('/') }}" class="btn btn-outline-dark"> Continue shopping</a>
+
+                </div>
+            @endif
             </div>
         </div>
         </form>

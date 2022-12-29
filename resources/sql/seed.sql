@@ -71,10 +71,11 @@ create table Orders(
   email VARCHAR(128) NOT NULL,
   phone INT, 
   orderDate TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
+  totalCost  FLOAT ,
+  trackingNumber INT,
   status TEXT NOT NULL DEFAULT 'Processing',
-  users_id INTEGER REFERENCES Users(id),
-  address_id INTEGER REFERENCES Address(id) ON DELETE CASCADE,
-  CONSTRAINT status CHECK (status IN ('Processing', 'Shipping', 'Delivered'))
+  CONSTRAINT status CHECK (status IN ('Processing', 'Shipping', 'Delivered')),
+  users_id INTEGER REFERENCES Users(id)
 );
 
 create table Purchase(
@@ -83,7 +84,7 @@ create table Purchase(
   date TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
   quantity INTEGER CHECK (quantity >= 0),
   product_id INTEGER REFERENCES Product(id),
-  orders_id INTEGER REFERENCES Orders(id) ON DELETE CASCADE
+  orders_id INTEGER REFERENCES Orders(id)
 );
 
 create table ProductPurchase(
@@ -320,7 +321,7 @@ INSERT INTO Cart VALUES (DEFAULT,4,9,1);
 
 
 -- Order
---INSERT INTO Orders VALUES (1,'john','jj@jj.com','987654321', '2022-08-23','Processing', 7, 1);
+--INSERT INTO Orders VALUES (1,'john','jj@jj.com','987654321', '2022-08-23',312,DEFAULT, 1);
 
 
 -- Purchase
