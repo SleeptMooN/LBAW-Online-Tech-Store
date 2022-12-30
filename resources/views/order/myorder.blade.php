@@ -19,8 +19,16 @@
                             <div class="border p-2">{{ $orders->email}}</div>
                             <label for="">Phone</label>
                             <div class="border p-2">{{ $orders->phone}}</div>
-                            <label for="">Housenumber</label>
-                            <div class="border p-2">{{ $address->housenumber}}</div>
+                            @foreach ($address as $items)
+                            <label for="">Country</label>
+                            <div class="border p-2">{{ $items->country}}</div>
+                            <label for="">City</label>
+                            <div class="border p-2">{{ $items->city}}</div>
+                            <label for="">House number</label>
+                            <div class="border p-2">{{ $items->housenumber}}</div>
+                            <label for="">Postal code</label>
+                            <div class="border p-2">{{ $items->postalcode}}</div>
+                            @endforeach
                         </div>
                         <div class="col-md-6">
                         <table class="table table-bordered">
@@ -33,6 +41,7 @@
                               </tr>
                           </thead>
                           <tbody>
+                         
                               
                           </tbody>
           

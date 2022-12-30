@@ -14,6 +14,7 @@
                 <table class="table table-bordered">
                 <thead> 
                     <tr>
+                        <th>Order Date</th>
                         <th>Tracking number</th>
                         <th>Total price</th>
                         <th>Status</th>
@@ -23,6 +24,7 @@
                 <tbody>
                     @foreach ($orders as $items)
                         <tr>
+                            <td>{{ date('d-m-y',strtotime($items->orderdate)) }}</td>
                             <td>{{$items->trackingnumber}}</td>
                             <td>{{$items->totalcost}}</td>
                             <td>{{$items->status}}</td>

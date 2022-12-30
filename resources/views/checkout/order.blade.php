@@ -15,31 +15,31 @@
                         <div class="row checkout-form">
                             <div class="col-md-6">
                                 <label for="FirstName">Name</label>
-                                <input type="text" class="form-control" name="name" placeholder="Enter name">
+                                <input type="text" class="form-control" name="name" placeholder="Enter name" required autofocus>
                             </div>
                             <div class="col-md-6">
                                 <label for="FirstName"> Email</label>
-                                <input type="text" class="form-control" name="email" placeholder="Enter email">
+                                <input type="text" class="form-control" name="email" placeholder="Enter email"required autofocus>
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label for="FirstName"> Phone Number</label>
-                                <input type="text" class="form-control" name="phone" placeholder="Enter phone number">
+                                <input type="text" class="form-control" name="phone" placeholder="Enter phone number"required autofocus>
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label for="FirstName"> House Number</label>
-                                <input type="text" class="form-control" name="house" placeholder="Enter house number">
+                                <input type="text" class="form-control" name="house" placeholder="Enter house number"required autofocus>
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label for="FirstName"> City</label>
-                                <input type="text" class="form-control" name="city" placeholder="Enter City">
+                                <input type="text" class="form-control" name="city" placeholder="Enter City"required autofocus>
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label for="FirstName"> Postal Code</label>
-                                <input type="text" class="form-control"  name="postal" placeholder="Enter postal code">
+                                <input type="text" class="form-control"  name="postal" placeholder="Enter postal code"required autofocus>
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label for="FirstName"> Country</label>
-                                <input type="text" class="form-control"  name="country" placeholder="Enter Country">
+                                <input type="text" class="form-control"  name="country" placeholder="Enter Country"required autofocus>
                             </div>
                            
                         </div>

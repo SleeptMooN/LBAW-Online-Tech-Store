@@ -3,6 +3,7 @@
 namespace App\Models;
 
 
+use App\Models\User;
 use App\Models\Purchase;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -18,6 +19,11 @@ class Order extends Model
 
     public function user()
     {
-       return $this->belongsTo('App\Models\User');
+       return $this->belongsTo('User');
     } 
+
+    public function purchase()
+    {
+       return $this->hasMany('App\Models\Purchase');
+    }
 }

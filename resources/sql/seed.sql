@@ -70,7 +70,7 @@ create table Orders(
   name TEXT NOT NULL,
   email VARCHAR(128) NOT NULL,
   phone INT, 
-  orderDate TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
+  orderDate timestamp NOT NULL DEFAULT NOW(),
   totalCost  FLOAT ,
   trackingNumber INT,
   status TEXT NOT NULL DEFAULT 'Processing',

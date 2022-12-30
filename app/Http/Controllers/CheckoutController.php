@@ -91,8 +91,10 @@ class CheckoutController extends Controller
     public function vieworder($id){
         //$orders = Order::where('users_id',Auth::id())->get();
         $address = Address::where('users_id',Auth::id())->get();
+        //dd($address);
         $orders = Order::where('id',$id)->where('users_id',Auth::id())->first();
-        return view('order.myorder',compact('orders'));
+        //dd($orders);
+        return view('order.myorder',compact('orders','address'));
 
     }
     
