@@ -38,15 +38,15 @@ class CheckoutController extends Controller
         $order->email = $request->input('email');
         $order->phone = $request->input('phone');
         $order->trackingnumber = rand(111,9999);
-        //$order->users_id = Auth::id();
-        
+       
+       /* 
         $total=0;
         $cartitems_total = Cart::where('users_id',Auth::id())->get();
         foreach($cartitems_total as $prod){
-            $total += $prod->product->price;
+            $total += $prod->product->price ;
         }
-        
         $order->totalcost = $total;
+        */
         $order-> save();
 
         $address = new Address();
@@ -61,7 +61,7 @@ class CheckoutController extends Controller
         $cartitems = Cart::where('users_id',Auth::id())->get();
         foreach($cartitems as $item){
             Purchase::create([
-                'orders_id'=>$order->id,
+                'order_id'=>$order->id,
                 'product_id'=>$item->product_id,
                 'quantity'=>$item->quantity,
                 'totalcost'=>$item->product->price,
@@ -72,6 +72,12 @@ class CheckoutController extends Controller
             
         } 
 
+        $total=0;
+        $cartitems_total = Cart::where('users_id',Auth::id())->get();
+        foreach($cartitems_total as $prod){
+            $total += ($prod->product->price * $item->quantity) ;
+        }
+        $order->totalcost = $total;
         $order->users_id = Auth::id();
         $order-> save();
 
@@ -89,11 +95,9 @@ class CheckoutController extends Controller
     }
 
     public function vieworder($id){
-        //$orders = Order::where('users_id',Auth::id())->get();
+        
         $address = Address::where('users_id',Auth::id())->get();
-        //dd($address);
         $orders = Order::where('id',$id)->where('users_id',Auth::id())->first();
-        //dd($orders);
         return view('order.myorder',compact('orders','address'));
 
     }

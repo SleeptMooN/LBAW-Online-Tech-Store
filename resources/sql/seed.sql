@@ -84,7 +84,7 @@ create table Purchase(
   date TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
   quantity INTEGER CHECK (quantity >= 0),
   product_id INTEGER REFERENCES Product(id),
-  orders_id INTEGER REFERENCES Orders(id)
+  order_id INTEGER REFERENCES Orders(id)
 );
 
 create table ProductPurchase(

@@ -12,10 +12,10 @@ class Purchase extends Model
     
     public $timestamps  = false;
     protected $table = "purchase";
-    protected $fillable = ['totalcost', 'quantity', 'product_id','orders_id'];
+    protected $fillable = ['totalcost', 'quantity', 'product_id','order_id'];
 
     
-    public function products()
+    public function product()
     {
        return $this->belongsTo('App\Models\Product');
     }

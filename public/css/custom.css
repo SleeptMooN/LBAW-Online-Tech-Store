@@ -15,3 +15,12 @@
 
 }
 
+.order-details label {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.order-details div {
+    font-size: 14px;
+    padding: 10px;
+}
