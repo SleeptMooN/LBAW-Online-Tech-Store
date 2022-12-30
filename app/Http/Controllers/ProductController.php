@@ -67,7 +67,7 @@ class ProductController extends Controller
         if(!$product) {
             abort(404);
         }
-
+        Flash::success('Product added to cart successfully!');
         $cart = cart::join('product', 'product_id', '=', 'product.id')->where('users_id', Auth::id())->get();
 
 

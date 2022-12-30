@@ -29,6 +29,12 @@ Route::post('/add-to-cart', 'CartController@addProduct');
 Route::post('/delete-cart-item', 'CartController@delProduct');
 Route::post('/update-cart', 'CartController@updatecart');
 
+//wishlist
+Route::get('wishlist', 'WishListController@wishlist')->name('wishlist');
+Route::post('/update_wishlist', 'WishListController@updateWishlist');
+Route::post('/remove_wishlist', 'WishListController@removeWishlist');
+
+
 
 // Product
 Route::get('/product/{id}', 'ProductController@show');
