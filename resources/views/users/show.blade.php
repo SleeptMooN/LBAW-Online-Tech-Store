@@ -46,7 +46,7 @@
                 <hr>
                 <div class="row">
                     <div class="d-grid gap-2 d-md-block">
-                        <a href="{{  url()->previous() }}" class="btn btn-outline-dark btn-lg" role="button">Edit</a>
+                        <a href="{{ url('/users/edit') }}" class="btn btn-outline-dark btn-lg" role="button">Edit</a>
                       </div>
                 </div>
             </div>

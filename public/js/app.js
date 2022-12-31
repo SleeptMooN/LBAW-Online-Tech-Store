@@ -37,6 +37,7 @@ document.querySelectorAll('.addToCartBtn').forEach(function(element) {
   });
 });
 
+
 document.querySelectorAll('.addToCart').forEach(function(element) {
   element.addEventListener('click', function(e) {
     e.preventDefault();
@@ -52,7 +53,9 @@ document.querySelectorAll('.addToCart').forEach(function(element) {
 
     sendAjaxRequest('POST', '/add-to-cart', data, function(response) {
       var response = JSON.parse(response.target.responseText);
+
       alert(response.status);
+      
     });
   });
 });
@@ -72,7 +75,7 @@ document.querySelectorAll('.addToCart_WL').forEach(function(element) {
 
     sendAjaxRequest('POST', '/add-to-cart', data, function(response) {
       var response = JSON.parse(response.target.responseText);
-      window.location.reload();
+      product_data.remove();
       alert(response.status);
     });
   });
@@ -111,11 +114,12 @@ document.querySelectorAll('.wishlist-remove-btn').forEach(function(element) {
 
     sendAjaxRequest('POST', '/remove_wishlist', data, function(response) {
       var response = JSON.parse(response.target.responseText);
-      window.location.reload();
+      product_data.remove();
       alert(response.status);
     });
   });
 });
+
 
   
 document.querySelectorAll('.delete-cart-item').forEach(function(element) {
@@ -188,5 +192,31 @@ document.querySelectorAll('.delete-cart-item').forEach(function(element) {
         window.location.reload();
       });
     });
+  });
+  
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    loadCart();
+  
+    function loadCart() {
+      var csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+      var headers = { 'X-CSRF-TOKEN': csrfToken };
+  
+      fetch('/load-cart-data', {
+        method: 'GET',
+        headers: headers
+      })
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(response) {
+          document.querySelector('.cart-count').innerHTML = response.count;
+        })
+        .catch(function(error) {
+          console.error(error);
+        });
+    }
   });
   

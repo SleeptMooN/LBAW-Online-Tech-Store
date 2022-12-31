@@ -28,6 +28,7 @@ Route::get('/cart', 'CartController@show');
 Route::post('/add-to-cart', 'CartController@addProduct');
 Route::post('/delete-cart-item', 'CartController@delProduct');
 Route::post('/update-cart', 'CartController@updatecart');
+Route::get('/load-cart-data' , 'CartController@cartcount');
 
 //wishlist
 Route::get('wishlist', 'WishListController@wishlist')->name('wishlist');

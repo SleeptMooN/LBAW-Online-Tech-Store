@@ -19,7 +19,7 @@
                             <h6 class="mb-0 ">Full Name</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            <input type="text" class="form-control" name="name" id="name" value="{{ Auth::user()->name }}">
+                            <input type="text" class="form-control" name="name" id="name" value="{{ Auth::user()->name }}" >
                         </div>
                     </div>
                     <hr>
@@ -28,7 +28,7 @@
                             <h6 class="mb-0">Email</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            <input type="email" class="form-control" name="email" id="email" value="{{ Auth::user()->email }}">
+                            <input type="email" class="form-control" name="email" id="email" value="{{ Auth::user()->email }}" >
                         </div>
                     </div>
                     <hr>
@@ -46,7 +46,7 @@
                             <h6 class="mb-0">Credits</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            <input type="text" class="form-control" name="credits" id="credits" value="{{ Auth::user()->credits }}">
+                            <input type="text" class="form-control" name="credits" id="credits" value="{{ Auth::user()->credits }}" autofocus>
                         </div>                 
                     </div>
                     <hr>
@@ -54,8 +54,8 @@
 
                         <div class="d-grid gap-2 d-md-block">
                             <a href="/users" class="btn btn-danger" role="button">Cancel</a>
-                            <input type="submit" name="send" value="Update" class="btn btn-success ">
-                            {{-- <a type="submit" class="btn btn-success" role="button">Update</a> --}}
+                            <input type="submit" name="send" value="Update" class="btn btn-dark ">
+                            
                         </div>
 
                     </div>
