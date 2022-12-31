@@ -57,6 +57,7 @@
                              @else
                              
                                  <h6>Out of stock</h6>
+                                 
                              @endif
                              
                              <div class="col md-2 mt-2">

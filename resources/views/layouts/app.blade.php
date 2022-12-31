@@ -68,13 +68,13 @@
                             <span class="fs-3">{{ config('app.name') }}</span>
                         </a>
 
-                        <form class="col-8 col-lg-4 mb-3 mb-lg-0 me-lg-3" action="/search" method="get">
+                        <form class="col-8 col-lg-4 mb-lg-0 me-lg-3" action="/search" method="get">
                             <input type="text" name="search" class="form-control form-control-dark" placeholder="Search..."
                                 aria-label="Search">
                         </form>
 
                         <div>
-                            <a type="button" class="btn btn-light" href="{{ url('/cart') }}">
+                            <a type="button" class="btn btn-light md-lg-3" href="{{ url('/cart') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                     class="bi bi-cart" viewBox="0 0 16 16">
                                     <path
@@ -83,6 +83,25 @@
                                 <span class="badge rounded-pill badge-notification bg-danger">
                                     0                        
                                 </span>
+                            </a>
+                            
+                        </div>
+                        <div>   
+                        <a type="button" class="btn btn-bg-black  md-lg-3" href="{{ url('/wishlist') }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            </button>
+                            </a>
+                            
+                        </div>
+                        <div>   
+                        <a type="button" class="btn btn-bg-black" href="{{ url('/users') }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                </svg>
+                            </button>
                             </a>
                             
                         </div>

@@ -57,6 +57,27 @@ document.querySelectorAll('.addToCart').forEach(function(element) {
   });
 });
 
+document.querySelectorAll('.addToCart_WL').forEach(function(element) {
+  element.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    var product_data = this.closest('.product_data');
+    var product_id = product_data.querySelector('.prod_id').value;
+    var quantity = 1;
+
+    var data = {
+      product_id: product_id,
+      quantity: quantity,
+    };
+
+    sendAjaxRequest('POST', '/add-to-cart', data, function(response) {
+      var response = JSON.parse(response.target.responseText);
+      window.location.reload();
+      alert(response.status);
+    });
+  });
+});
+
 document.querySelectorAll('.addToWishBtn').forEach(function(element) {
   element.addEventListener('click', function(e) {
     e.preventDefault();
