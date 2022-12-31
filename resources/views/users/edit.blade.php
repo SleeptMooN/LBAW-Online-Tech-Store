@@ -42,6 +42,15 @@
                     </div>
                     <hr>
                     <div class="row">
+                        <div class="col-sm-3 d-flex row align-content-center">
+                            <h6 class="mb-0">Credits</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" name="credits" id="credits" value="{{ Auth::user()->credits }}">
+                        </div>                 
+                    </div>
+                    <hr>
+                    <div class="row">
 
                         <div class="d-grid gap-2 d-md-block">
                             <a href="/users" class="btn btn-danger" role="button">Cancel</a>

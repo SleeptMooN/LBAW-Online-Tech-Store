@@ -61,18 +61,30 @@
                                 </tr>
                             </thead>
                             <tbody> 
+                                @php $total = 0; @endphp
                                 @foreach ($cartitems as $item)
                                 <tr>
                                     <td>{{$item->product->name}}</td>
                                     <td>{{$item->quantity}}</td>
                                     <td>{{$item->product->price * $item->quantity}} €</td>
                                 </tr>
+                                
+                                @php $total += $item->product->price * $item->quantity ; @endphp
                                 @endforeach
-
+                                
                             </tbody>
                         </table>
+                        <h4>Your Credits = {{$item->users->credits}} €</h4>
+                        <h5> Total Order Price = {{ $total }} €</h5>
+                        <h6> Credits after the purchase = {{ $item->users->credits - $total }} €</h6>
                         <hr>
+                        @if($item->users->credits > $total)
+                        @php $item->users->credits = $item->users->credits - $total;@endphp
                         <button type ="submit" class="btn btn-dark w-100">Place Order</button>
+                        @else
+                        <a href="{{ url('/users/edit') }}" class="btn btn-outline-dark w-100"> Add Credits</a>
+                        @endif
+
                     </div>
                 </div>
                 @else

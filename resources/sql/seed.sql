@@ -20,7 +20,8 @@ create table Users(
   name TEXT NOT NULL,
   password TEXT NOT NULL,
   email VARCHAR(128) UNIQUE NOT NULL,
-  phone INT 
+  credits FLOAT DEFAULT 0,
+  phone INT  DEFAULT 0
 );
 
 create table Address(
@@ -248,30 +249,31 @@ INSERT INTO users VALUES (
   'John Doe',
   '$2y$10$HfzIhGCCaxqyaIdGgjARSuOKAcm1Uy82YfLuNaajn6JrjLWy9Sj/W',
   'example@example.com',
+  DEFAULT,
   '99999999'
 ); -- Password is 1234. Generated using Hash::make('1234')
 
 -- Users
-INSERT INTO Users VALUES (DEFAULT,'Example','Example123','Example12@example.com','987654321');
-INSERT INTO Users VALUES (DEFAULT,' Elwood Ellis','tMF3sw6','wood34@gmmail.com','93697524');
-INSERT INTO Users VALUES (DEFAULT,' Tiffani Derek ','QJg4MehPa','tiderek@1232.com','95334314');
-INSERT INTO Users VALUES (DEFAULT,' Timmy Hattie ','MP2p7BhIH','hatie3231@de32.org','90853239');
-INSERT INTO Users VALUES (DEFAULT,' Dave Randi ','9I8ELTY7u','randi53621@gmaiiil.com','99930384');
-INSERT INTO Users VALUES (DEFAULT,' Ira Trinity ','3Th8FkGHv','iraa4253@asd.com','90416185');
-INSERT INTO Users VALUES (DEFAULT,' Ernest Macie ','AbxSjnfyC','23macie123@hotmail.com','93749133');
-INSERT INTO Users VALUES (DEFAULT,' Davey Katrina ','fvuGD9Mye','katrinaa12@869.com','96523660');
-INSERT INTO Users VALUES (DEFAULT,' Hester Araminta ','PqKwgZNUj','hester1524@mail.com','93498111');
-INSERT INTO Users VALUES (DEFAULT,' Essie Lorin ','eevQ9yKbK','lorin132@ess.com','95690506');
-INSERT INTO Users VALUES (DEFAULT,' Josh Jed ','qUM8czLpV','jjed@12321.com','95221856');
-INSERT INTO Users VALUES (DEFAULT,' Demelza Dylan ','GjD9kL3jE','de_dy3431@mail.com','99825607');
-INSERT INTO Users VALUES (DEFAULT,' Dionne Lally ','wTrXHpDfv','ionne213@56gt.com','98317321');
-INSERT INTO Users VALUES (DEFAULT,' Severo Soren ','TxaGa44aT','sorenn_12@ial.com','97749743');
-INSERT INTO Users VALUES (DEFAULT,' Angus Jaimie ','bq85c6Ays','imae32123@hotmail.com','93622457');
+INSERT INTO Users VALUES (DEFAULT,'Example','Example123','Example12@example.com',DEFAULT,'987654321');
+INSERT INTO Users VALUES (DEFAULT,' Elwood Ellis','tMF3sw6','wood34@gmmail.com',DEFAULT,'93697524');
+INSERT INTO Users VALUES (DEFAULT,' Tiffani Derek ','QJg4MehPa','tiderek@1232.com',DEFAULT,'95334314');
+INSERT INTO Users VALUES (DEFAULT,' Timmy Hattie ','MP2p7BhIH','hatie3231@de32.org',DEFAULT,'90853239');
+INSERT INTO Users VALUES (DEFAULT,' Dave Randi ','9I8ELTY7u','randi53621@gmaiiil.com',DEFAULT,'99930384');
+INSERT INTO Users VALUES (DEFAULT,' Ira Trinity ','3Th8FkGHv','iraa4253@asd.com',DEFAULT,'90416185');
+INSERT INTO Users VALUES (DEFAULT,' Ernest Macie ','AbxSjnfyC','23macie123@hotmail.com',DEFAULT,'93749133');
+INSERT INTO Users VALUES (DEFAULT,' Davey Katrina ','fvuGD9Mye','katrinaa12@869.com',DEFAULT,'96523660');
+INSERT INTO Users VALUES (DEFAULT,' Hester Araminta ','PqKwgZNUj','hester1524@mail.com',DEFAULT,'93498111');
+INSERT INTO Users VALUES (DEFAULT,' Essie Lorin ','eevQ9yKbK','lorin132@ess.com',DEFAULT,'95690506');
+INSERT INTO Users VALUES (DEFAULT,' Josh Jed ','qUM8czLpV','jjed@12321.com',DEFAULT,'95221856');
+INSERT INTO Users VALUES (DEFAULT,' Demelza Dylan ','GjD9kL3jE','de_dy3431@mail.com',DEFAULT,'99825607');
+INSERT INTO Users VALUES (DEFAULT,' Dionne Lally ','wTrXHpDfv','ionne213@56gt.com',DEFAULT,'98317321');
+INSERT INTO Users VALUES (DEFAULT,' Severo Soren ','TxaGa44aT','sorenn_12@ial.com',DEFAULT,'97749743');
+INSERT INTO Users VALUES (DEFAULT,' Angus Jaimie ','bq85c6Ays','imae32123@hotmail.com',DEFAULT,'93622457');
 
 -- Admins
-INSERT INTO AdminUsers VALUES (1);
+--INSERT INTO AdminUsers VALUES (1);
 INSERT INTO AdminUsers VALUES (2);
-INSERT INTO AdminUsers VALUES (3);
+--INSERT INTO AdminUsers VALUES (3);
 
 -- About
 INSERT INTO About VALUES (1, 'onlyt3ch@gmail.com', 9333333);

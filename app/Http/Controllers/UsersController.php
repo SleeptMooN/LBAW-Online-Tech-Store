@@ -21,12 +21,14 @@ class UsersController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|max:255',
             'phone' => 'required|string|max:255',
+            'credits' => 'required|string|max:255',
         ]);
 
         $item = [
             'name' => $request->name,
             'email' => $request->email,
-            'phone' => $request->phone
+            'phone' => $request->phone,
+            'credits' => $request->credits,
         ];
 
         DB::table('users')->where('id', Auth::id())->update($item);      

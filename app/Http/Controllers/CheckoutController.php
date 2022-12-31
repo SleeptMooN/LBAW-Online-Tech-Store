@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Address;
+use App\Models\User;
 
 use App\Models\Product;
 use App\Models\Category;
@@ -85,6 +86,10 @@ class CheckoutController extends Controller
         Cart::destroy($cartitems); 
 
         Flash::success('Order placed Successfully!');
+        $user = User::find(Auth::id());
+        $user->update([
+         'credits' => $user->credits - $total,
+        ]);
         return redirect('/');
     }
 
