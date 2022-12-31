@@ -13,19 +13,13 @@ class WishList extends Model {
     use HasFactory;
 
     public $timestamps = false;
+
     protected $table = "wishlist";
+
     protected $fillables = [
         'users_id',
         'product_id'
     ];
-
-
-    
-    public static function countWishlist($product_id){
-        $countWishlist = wishlist::where(['users_id' => Auth::User()->id, 
-        'product_id' => $product_id]) -> count();
-        return $countWishlist;
-    }
 
     public function products()
     {

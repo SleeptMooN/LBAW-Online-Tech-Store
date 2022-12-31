@@ -59,10 +59,11 @@ create table Review(
 );
 
 create table Wishlist(
+  id SERIAL PRIMARY KEY,
   users_id INTEGER REFERENCES Users(id),
-  product_id INTEGER REFERENCES Product(id),
-  quantity INTEGER CHECK (quantity >= 0)
+  product_id INTEGER REFERENCES Product(id)
 );
+
 
 
 create table Orders(
@@ -306,14 +307,7 @@ INSERT INTO Product VALUES (14,'Headphones Sony WH-1000XM5 Bluetooth ANC NFC Bla
 INSERT INTO Product VALUES (15,'Powerbank Apple Magsafe Battery Pack', 115 , 'Product specifications:', 14 ,4.4, 'https://static.fnac-static.com/multimedia/Images/PT/NR/cb/2a/72/7482059/1541-2.jpg',4);
 
 -- Wishlist
-INSERT INTO Wishlist VALUES (1, 1,3);
-INSERT INTO Wishlist VALUES (1, 3,2);
-INSERT INTO Wishlist VALUES (4, 4,2);
-INSERT INTO Wishlist VALUES (4, 7,2);
-INSERT INTO Wishlist VALUES (6, 13,2);
-INSERT INTO Wishlist VALUES (7, 12,1);
-INSERT INTO Wishlist VALUES (10, 10,2);
-INSERT INTO Wishlist VALUES (12, 8,3);
+INSERT INTO Wishlist VALUES (DEFAULT,1, 1);
 
 -- Cart
 INSERT INTO Cart VALUES (DEFAULT,4,5,1);
