@@ -24,3 +24,10 @@
     font-size: 14px;
     padding: 10px;
 }
+
+.alert {
+    font-size: larger;
+    color: white;
+    background-color: rgba(45, 196, 90, 0.911);
+    
+  }

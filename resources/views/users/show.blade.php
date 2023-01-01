@@ -45,9 +45,12 @@
                
                 <hr>
                 <div class="row">
-                    <div class="d-grid gap-2 d-md-block">
-                        <a href="{{ url('/users/edit') }}" class="btn btn-outline-dark btn-lg" role="button">Edit</a>
+                    <div class="d-grid d-md-block">
+                        <a href="{{ url('/users/edit') }}" class="btn btn-outline-warning btn-lg" role="button">Edit</a>
+                        <a href="{{ url('/orders') }}" class="btn btn-dark btn-lg" role="button">Purchases historic</a>
                       </div>
+                    
+                
                 </div>
             </div>
         </div>

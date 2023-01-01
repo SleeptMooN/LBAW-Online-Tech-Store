@@ -1,6 +1,19 @@
 @extends('layouts.app')
-
 @section('content')
+
+@if (session('status'))
+    <div class="alert alert-success text-center">
+        {{ session('status') }}
+    </div>
+    <script>
+        let alert = document.querySelector('.alert');
+
+      
+        setTimeout(function() {
+          alert.remove();
+        }, 5000);
+    </script>
+@endif
 
     <div class="container">
         <div class="main-body mt-4">
