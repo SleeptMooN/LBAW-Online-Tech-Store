@@ -15,31 +15,66 @@
                         <div class="row checkout-form">
                             <div class="col-md-6">
                                 <label for="FirstName">Name</label>
-                                <input type="text" class="form-control" name="name" placeholder="Enter name" required autofocus>
+                                <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Enter name" required autofocus>
+                                @if ($errors->has('name'))
+                                   <span class="error">
+                                       {{ $errors->first('name') }}
+                                   </span>
+                                 @endif
                             </div>
                             <div class="col-md-6">
                                 <label for="FirstName"> Email</label>
-                                <input type="text" class="form-control" name="email" placeholder="Enter email"required autofocus>
+                                <input type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="Enter email"required autofocus>
+                                @if ($errors->has('email'))
+                                    <span class="error">
+                                        {{ $errors->first('email') }}
+                                    </span>
+                                  @endif
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label for="FirstName"> Phone Number</label>
-                                <input type="text" class="form-control" name="phone" placeholder="Enter phone number"required autofocus>
+                                <input type="text" class="form-control" name="phone" value="{{ old('phone') }}" placeholder="Enter phone number"required autofocus>
+                                @if ($errors->has('phone'))
+                                    <span class="error">
+                                        {{ $errors->first('phone') }}
+                                    </span>
+                                  @endif
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label for="FirstName"> House Number</label>
-                                <input type="text" class="form-control" name="house" placeholder="Enter house number"required autofocus>
+                                <input type="text" class="form-control" name="house" value="{{ old('house') }}" placeholder="Enter house number"required autofocus>
+                                @if ($errors->has('house'))
+                                    <span class="error">
+                                        {{ $errors->first('house') }}
+                                    </span>
+                                  @endif
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label for="FirstName"> City</label>
-                                <input type="text" class="form-control" name="city" placeholder="Enter City"required autofocus>
+                                <input type="text" class="form-control" name="city" value="{{ old('city') }}" placeholder="Enter City"required autofocus>
+                                @if ($errors->has('city'))
+                                    <span class="error">
+                                        {{ $errors->first('city') }}
+                                    </span>
+                                  @endif
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label for="FirstName"> Postal Code</label>
-                                <input type="text" class="form-control"  name="postal" placeholder="Enter postal code"required autofocus>
+                                <input type="text" class="form-control"  name="postal" value="{{ old('postal') }}" placeholder="Enter postal code"required autofocus>
+                                @if ($errors->has('postal'))
+                                     <span class="error">
+                                         {{ $errors->first('postal') }}
+                                     </span>
+                                   @endif
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label for="FirstName"> Country</label>
-                                <input type="text" class="form-control"  name="country" placeholder="Enter Country"required autofocus>
+                                <input type="text" class="form-control"  name="country" value="{{ old('country') }}"  placeholder="Enter Country"required autofocus>
+                                @if ($errors->has('country'))
+                                  <span class="error">
+                                      {{ $errors->first('country') }}
+                                  </span>
+                                @endif
                             </div>
                            
                         </div>

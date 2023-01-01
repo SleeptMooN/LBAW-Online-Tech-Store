@@ -29,6 +29,15 @@
                     @endif
                   </div>
                   <div class="col-12">
+                    <label for="email">Phone</label>
+                    <input id="email" class="form-control" type="phone" name="phone" value="{{ old('phone') }}" required>
+                    @if ($errors->has('phone'))
+                      <span class="error">
+                          {{ $errors->first('phone') }}
+                      </span>
+                    @endif
+                  </div>
+                  <div class="col-12">
                     <label for="password">Password</label>
                     <input id="password" class="form-control" type="password" name="password" required>
                     @if ($errors->has('password'))

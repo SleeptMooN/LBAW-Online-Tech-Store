@@ -1,19 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
+use Flash;
 use App\Models\Cart;
-use App\Models\Order;
-use App\Models\Address;
 use App\Models\User;
+use App\Models\Order;
 
+use App\Models\Address;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Purchase;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-
-use Flash;
 
 
 class CheckoutController extends Controller
@@ -34,20 +35,23 @@ class CheckoutController extends Controller
 
     public function placeorder(Request $request){
 
+
+        $request->validate([
+            'name'=>'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'phone' => 'required|int',
+            'house' => 'required|int',
+            'postal' => 'required|int',
+            'city' => 'required|string',
+            'country' => 'required|string',
+        ]);
+
+
         $order = new Order();
         $order->name = $request->input('name');
         $order->email = $request->input('email');
         $order->phone = $request->input('phone');
-        $order->trackingnumber = rand(111,9999);
-       
-       /* 
-        $total=0;
-        $cartitems_total = Cart::where('users_id',Auth::id())->get();
-        foreach($cartitems_total as $prod){
-            $total += $prod->product->price ;
-        }
-        $order->totalcost = $total;
-        */
+        $order->trackingnumber = rand(1111,99999);
         $order-> save();
 
         $address = new Address();
@@ -90,7 +94,8 @@ class CheckoutController extends Controller
         $user->update([
          'credits' => $user->credits - $total,
         ]);
-        return redirect('/');
+
+        return redirect('/orders')->with('message', 'Successful purchase!');
     }
 
     public function showorders(){

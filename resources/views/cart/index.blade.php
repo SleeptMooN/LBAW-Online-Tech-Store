@@ -8,7 +8,7 @@
         </div>
         
             <div class="container my-5">
-                <div class="card shadow">
+                <div class="card shadow cartitems">
                     @if($cartitems->count() > 0)
                     <div class="table-responsive p-3">
                         <table class="table table-borderless table-shopping-cart">
@@ -81,6 +81,7 @@
                 </div>
             @endif
         </div>
+    </div>
     </div>
 
 

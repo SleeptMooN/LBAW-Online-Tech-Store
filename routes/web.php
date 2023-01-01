@@ -36,7 +36,6 @@ Route::post('/update_wishlist', 'WishListController@updateWishlist');
 Route::post('/remove_wishlist', 'WishListController@removeWishlist');
 
 
-
 // Product
 Route::get('/product/{id}', 'ProductController@show');
 Route::post('/product/addCart', 'ProductController@addToCart')->name('card.add');
@@ -58,7 +57,10 @@ Route::post('register', 'Auth\RegisterController@register');
 //search
 Route::get('search', 'SearchController@show')->name('search');
 
+//checkout
 Route::get('checkout', 'CheckoutController@index')->name('checkout');
+
+//orders
 Route::post('place-order','CheckoutController@placeorder')->name('place-order');
 Route::get('orders','CheckoutController@showorders')->name('orders');
 Route::get('view-order/{id}','CheckoutController@vieworder')->name('view-order');

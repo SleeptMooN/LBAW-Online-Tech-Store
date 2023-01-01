@@ -141,21 +141,22 @@ document.querySelectorAll('.delete-cart-item').forEach(function(element) {
   });
 });
 
-    
+  
    
-  document.querySelectorAll('.add_btn').forEach(function(element) {
-    element.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      var add_value = this.closest('.product_data').querySelector('.input-qty').value;
-      var value = parseInt(add_value, 10);
-      value = isNaN(value) ? 0 : value;
-      if (value < 10) {
-        value++;
-        this.closest('.product_data').querySelector('.input-qty').value = value;
-      }
-    });
+document.querySelectorAll('.add_btn').forEach(function(element) {
+  element.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    var add_value = this.closest('.product_data').querySelector('.input-qty').value;
+    var value = parseInt(add_value, 10);
+    value = isNaN(value) ? 0 : value;
+    if (value < 10) {
+      value++;
+      this.closest('.product_data').querySelector('.input-qty').value = value;
+    }
   });
+});
+
       
     
 
@@ -190,9 +191,12 @@ document.querySelectorAll('.delete-cart-item').forEach(function(element) {
   
       sendAjaxRequest('POST', '/update-cart', data, function() {
         window.location.reload();
+        
       });
     });
   });
+
+  
   
 
 

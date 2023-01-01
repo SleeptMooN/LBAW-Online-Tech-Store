@@ -3,6 +3,11 @@
 
 @section('content')
 
+@if (session('message'))
+    <div class="alert alert-success text-center">
+        {{ session('message') }}
+    </div>
+@endif
 <div class="container py-5">
     <div class="row">
         <div class="col-md-12">
@@ -19,7 +24,7 @@
                              <th>Tracking number</th>
                              <th>Total price</th>
                              <th>Status</th>
-                             <th>Action</th>
+                             <th>Details</th>
                          </tr>
                      </thead>
                      <tbody>
