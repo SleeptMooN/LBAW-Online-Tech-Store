@@ -43,6 +43,8 @@ Route::post('/product/addCart', 'ProductController@addToCart')->name('card.add')
 Route::post('/product/removeCart', 'ProductController@removeFromCart')->name('card.remove');
 Route::post('/product/clearCart', 'ProductController@clearCart')->name('card.clear');
 Route::post('/product/updateCartItem', 'ProductController@updateCart')->name('card.updateItem');
+Route::post('/product/addProduct', 'ProductController@addToDB')->name('product.add');
+
 
 // Category
 Route::get('/category', 'CategoryController@show');

@@ -40,7 +40,7 @@ create table Category(
 );
 
 create table Product(
-  id_Product SERIAL PRIMARY KEY,
+  id_Product AUTO_INCREMENT PRIMARY KEY,
   name TEXT NOT NULL,
   price FLOAT NOT NULL CHECK (price > 0),
   description TEXT NOT NULL,

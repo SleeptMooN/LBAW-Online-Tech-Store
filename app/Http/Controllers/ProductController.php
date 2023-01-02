@@ -97,17 +97,75 @@ class ProductController extends Controller
         return redirect('/cart');
     }
 
+    private function apiCall(string $fileData){
+        $curl = curl_init();
+
+        $fileDataBase64 = base64_encode($fileData);
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://api.imgbb.com/1/upload?expiration=600&key=a50845146859254b33ca26c70d1a43e0',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => array('image' => $fileDataBase64),
+        ));
+
+        $response = curl_exec($curl);
+
+        $responseData = json_decode($response);
+
+        curl_close($curl);
+        return $responseData->data->display_url;
+    }
+
+    function console_log($output, $with_script_tags = true) {
+        $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) . ');';
+        if ($with_script_tags) {
+            $js_code = '<script>' . $js_code . '</script>';
+        }
+        echo $js_code;
+        }
+
+    public function addToDB(Request $request) {
+        $image_data = file_get_contents($request->image);
+        $apiCall = $this->apiCall($image_data);
+        $userId = Auth::id();
+        if ($userId == null) {
+            return redirect('/login'); 
+        }
+
+        $maxId = DB::table('product')->max('id');
+        $newId = $maxId + 1;
+
+        $product = [
+            "id" => $newId,
+            "name" => $request->title,
+            "price" => $request->price,
+            "description" => $request->description,
+            "quantity" => $request->quantity,
+            "score" => 5,
+            "photo" => $apiCall,
+            "category_id" => $request->category
+        ];
+        
+        DB::table('product')->insert($product);
+        return redirect('/');
+    }
 
     public function show($id){
         $product = Product::where('id', $id)->get();
         $reviews = Review::where('product_id',$id)->simplePaginate(4);
 
-        
         return view('product.index', [
             'product' => $product[0],
             'reviews' => $reviews
         ]);
     }
+    
     public function redirectToHome(){
         return redirect('/');
     }
