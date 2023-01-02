@@ -48,6 +48,8 @@
                     <div class="d-grid d-md-block">
                         <a href="{{ url('/users/edit') }}" class="btn btn-outline-warning btn-lg" role="button">Edit</a>
                         <a href="{{ url('/orders') }}" class="btn btn-dark btn-lg" role="button">Purchases historic</a>
+                        <form method="GET" action="{{ url('/deleteUser') }}">
+                        <input class="btn btn-danger btn-lg float-end" type="submit" value="Delete Account"></form>
                       </div>
                     
                 

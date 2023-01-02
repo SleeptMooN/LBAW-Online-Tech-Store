@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use DB;
-use App\User;
+
 use Auth;
+use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 
 class UsersController extends Controller
@@ -43,5 +44,14 @@ class UsersController extends Controller
  
     public function show() {
         return view('users.show');
+    }
+
+    public function deleteuser() {
+
+        $user = Auth::user();
+        Auth::logout();
+        $user->delete();
+        
+        return redirect('/');
     }
 }

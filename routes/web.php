@@ -21,6 +21,7 @@ Route::get('contact', 'HomePageController@contact');
 Route::get('/users', 'UsersController@show');
 Route::get('/users/edit', 'UsersController@edit');
 Route::post('/users/edit', 'UsersController@update')->name('users.edit');
+Route::get('/deleteUser', 'UsersController@deleteuser')->name('deleteUser');
 
 
 // Cart
