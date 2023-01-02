@@ -289,24 +289,29 @@ INSERT INTO Category VALUES (3, 'Computers');
 INSERT INTO Category VALUES (4, 'Accessories');
 
 -- Products
-INSERT INTO Product VALUES (1,'Apple iPhone 14 - 512GB - Black', 1399.99 , 'Product specifications:', 7 ,4.7, 'https://static.fnac-static.com/multimedia/Images/PT/NR/d1/67/81/8480721/1540-1.jpg',1);
-INSERT INTO Product VALUES (2,'Apple iPhone 14 Pro Max - 256GB - White ', 1629.99 , 'Product specifications:', 9 ,4.9, 'https://static.fnac-static.com/multimedia/Images/PT/NR/c2/67/81/8480706/1540-1.jpg',1);
-INSERT INTO Product VALUES (3,'Apple iPhone 13 - 128GB - Blue ', 929.99 , 'Product specifications:', 4 ,4.5, 'https://static.fnac-static.com/multimedia/Images/PT/NR/24/ed/73/7597348/1540-1.jpg',1);
-INSERT INTO Product VALUES (4,'Samsung Galaxy S22 Ultra - 128GB - Green ', 1149.99 , 'Product specifications:', 2 ,4.3, 'https://static.fnac-static.com/multimedia/Images/PT/NR/6c/94/78/7902316/1540-1.jpg',1);
-INSERT INTO Product VALUES (5,'Samsung Galaxy S22+ - 256GB - Pink Gold  ', 999.99 , 'Product specifications:', 13 ,4.8, 'https://static.fnac-static.com/multimedia/Images/PT/NR/67/94/78/7902311/1540-1.jpg',1);
+INSERT INTO Product VALUES (DEFAULT,'Apple iPhone 14 - 512GB - Black', 1399.99 , 'Dimensions: 146.7 x 71.5 x 7.8 mm (5.78 x 2.81 x 0.31 in); Apple GPU (5-core graphics); Apple A15 Bionic (5 nm)', 100 ,4.7, 'https://static.fnac-static.com/multimedia/Images/PT/NR/d1/67/81/8480721/1540-1.jpg',1);
+INSERT INTO Product VALUES (DEFAULT,'Apple iPhone 14 Pro Max - 256GB - White ', 1629.99 , 'Dimensions: 	160.7 x 77.6 x 7.9 mm (6.33 x 3.06 x 0.31 in); Apple GPU (5-core graphics); Apple A16 Bionic (4 nm)', 100 ,4.9, 'https://static.fnac-static.com/multimedia/Images/PT/NR/c2/67/81/8480706/1540-1.jpg',1);
+INSERT INTO Product VALUES (DEFAULT,'Apple iPhone 13 - 128GB - Blue ', 929.99 , 'Dimensions: 146.7 x 71.5 x 7.7 mm (5.78 x 2.81 x 0.30 in); Apple GPU (4-core graphics); Apple A15 Bionic (5 nm)', 100 ,4.5, 'https://static.fnac-static.com/multimedia/Images/PT/NR/24/ed/73/7597348/1540-1.jpg',1);
+INSERT INTO Product VALUES (DEFAULT,'Samsung Galaxy S22 Ultra - 128GB - Green ', 1149.99 , 'Dimensions:	163.3 x 77.9 x 8.9 mm (6.43 x 3.07 x 0.35 in); Dimensions 	163.3 x 77.9 x 8.9 mm (6.43 x 3.07 x 0.35 in); Android 12, upgradable to Android 13, One UI 5', 100 ,4.3, 'https://static.fnac-static.com/multimedia/Images/PT/NR/6c/94/78/7902316/1540-1.jpg',1);
+INSERT INTO Product VALUES (DEFAULT,'Samsung Galaxy S22+ - 256GB - Pink Gold  ', 999.99 , ' 	Dimensions:	157.4 x 75.8 x 7.6 mm (6.20 x 2.98 x 0.30 in); Octa-core (1x2.8 GHz Cortex-X2 & 3x2.50 GHz Cortex-A710 & 4x1.8 GHz Cortex-A510) - Europe; Android 12, upgradable to Android 13, One UI 5', 100 ,4.8, 'https://static.fnac-static.com/multimedia/Images/PT/NR/67/94/78/7902311/1540-1.jpg',1);
 
-INSERT INTO Product VALUES (6,'Apple iPad Pro 12.9'' - 128GB WiFi - Black  ', 1229 , 'Product specifications:', 10 ,4.5, 'https://static.fnac-static.com/multimedia/Images/PT/NR/01/9d/6a/6987009/1541-1.jpg',2);
-INSERT INTO Product VALUES (7,'Tablet Samsung Galaxy Tab S8 11'' - X706 - 5G - 256GB - Graphite  ', 959.99 , 'Product specifications:', 6 ,4.9, 'https://static.fnac-static.com/multimedia/Images/PT/NR/20/77/78/7894816/1540-1.jpg',2);
-INSERT INTO Product VALUES (8,'Tablet Lenovo Tab M10 Plus 125FU - 128 GB - Wi-Fi - Grey  ', 219.59 , 'Product specifications:', 10 ,4.5, 'https://static.fnac-static.com/multimedia/Images/PT/NR/a4/27/7f/8333220/1540-1.jpg',2);
+INSERT INTO Product VALUES (DEFAULT,'Apple iPad Pro 12.9'' - 128GB WiFi - Black  ', 1229 , ' 	Dimensions:	280.6 x 214.9 x 6.4 mm (11.05 x 8.46 x 0.25 in); Apple GPU (10-core graphics); Octa-core;  	Apple M2', 100 ,4.5, 'https://static.fnac-static.com/multimedia/Images/PT/NR/01/9d/6a/6987009/1541-1.jpg',2);
+INSERT INTO Product VALUES (DEFAULT,'Tablet Samsung Galaxy Tab S8 11'' - X706 - 5G - 256GB - Graphite  ', 959.99 , 'Dimensions: 14.6" (369.9mm) Super AMOLED;USB 3.2 Gen 1', 100 ,4.9, 'https://static.fnac-static.com/multimedia/Images/PT/NR/20/77/78/7894816/1540-1.jpg',2);
+INSERT INTO Product VALUES (DEFAULT,'Tablet Lenovo Tab M10 Plus 125FU - 128 GB - Wi-Fi - Grey  ', 219.59 , 'Media Tek G80 Processor (2.00 GHz );screen: 10.6" TDDI LCD; Batery: 2 Cell Li-Polymer', 100 ,4.5, 'https://static.fnac-static.com/multimedia/Images/PT/NR/a4/27/7f/8333220/1540-1.jpg',2);
 
-INSERT INTO Product VALUES (9,'Apple MacBook Air 2022 13.6" | M2 CPU 8-core, GPU 10-core | SSD 1TB | 16GB RAM ', 2239.00 , 'Product specifications:', 8 ,4.8, 'https://static.fnac-static.com/multimedia/Images/PT/NR/9e/fd/7c/8191390/1540-1.jpg',3);
-INSERT INTO Product VALUES (10,'Apple MacBook Air 2020 13.3" | M1 CPU 8-core, GPU 7-core | SSD 256GB | 16GB RAM  ', 1359.00 , 'Product specifications:', 2 ,4.2, 'https://static.fnac-static.com/multimedia/Images/PT/MC/e2/12/28/19403490/1540-1.jpg#d131100b-c848-492d-99cf-c777f1e040b3',3);
-INSERT INTO Product VALUES (11,'Laptop Lenovo IdeaPad 3 15ADA05 15.6 ', 399.00 , 'Product specifications:', 14 ,3.9, 'https://static.fnac-static.com/multimedia/Images/PT/NR/a3/d8/70/7395491/1541-1.jpg',3);
-INSERT INTO Product VALUES (12,'Laptop Lenovo Legion 5 Pro 16ACH6H 16', 1499.00 , 'Product specifications:', 7 ,5, 'https://static.fnac-static.com/multimedia/Images/PT/NR/20/6b/7c/8153888/1540-1.jpg',3);
+INSERT INTO Product VALUES (DEFAULT,'Apple MacBook Air 2022 13.6" | M2 CPU 8-core, GPU 10-core | SSD 1TB | 16GB RAM ', 1839.00 , '8-core CPU with 4 performance cores and 4 efficiency cores; 10-core GPU; 16-core Neural Engine', 100 ,4.8, 'https://static.fnac-static.com/multimedia/Images/PT/NR/9e/fd/7c/8191390/1540-1.jpg',3);
+INSERT INTO Product VALUES (DEFAULT,'Apple MacBook Air 2020 13.3" | M1 CPU 8-core, GPU 7-core | SSD 256GB | 16GB RAM  ', 1359.00 , '8-core CPU with 4 performance cores and 4 efficiency cores; 7-core GPU; 16-core Neural Engine', 122 ,4.2, 'https://static.fnac-static.com/multimedia/Images/PT/MC/e2/12/28/19403490/1540-1.jpg#d131100b-c848-492d-99cf-c777f1e040b3',3);
+INSERT INTO Product VALUES (DEFAULT,'Laptop Lenovo IdeaPad 3 15ADA05 15.6 ', 399.00 , 'AMD Ryzen™ 5 3500U Processor (2.10 GHz up to 3.70 GHz); 4 GB DDR4-2400MHz (Soldered) + 4 GB DDR4-2400MHz (SODIMM); Integrated AMD Radeon™ Vega 8 Graphic', 142 ,3.9, 'https://static.fnac-static.com/multimedia/Images/PT/NR/a3/d8/70/7395491/1541-1.jpg',3);
+INSERT INTO Product VALUES (DEFAULT,'Laptop Lenovo Legion 5 Pro 16ACH6H 16', 1499.00 , 'RAM: 16GB (2x8GB) DDR4 3200 MHz; AMD Radeon Graphics + NVIDIA GeForce RTX 3070 8GB GDDR6 TGP 140W;  SSD 512GB M.2 2242 PCIe 3.0x4 NVMe', 211 ,5, 'https://static.fnac-static.com/multimedia/Images/PT/NR/20/6b/7c/8153888/1540-1.jpg',3);
 
-INSERT INTO Product VALUES (13,'Stand Asus ROG Throne Qi', 120.59 , 'Product specifications:', 7 ,4.6, 'https://static.fnac-static.com/multimedia/Images/PT/NR/70/c4/66/6734960/1540-1.jpg',4);
-INSERT INTO Product VALUES (14,'Headphones Sony WH-1000XM5 Bluetooth ANC NFC Black', 390.90 , 'Product specifications:', 19 ,4.9, 'https://static.fnac-static.com/multimedia/Images/PT/NR/44/10/7c/8130628/1540-1.jpg',4);
-INSERT INTO Product VALUES (15,'Powerbank Apple Magsafe Battery Pack', 115 , 'Product specifications:', 14 ,4.4, 'https://static.fnac-static.com/multimedia/Images/PT/NR/cb/2a/72/7482059/1541-2.jpg',4);
+INSERT INTO Product VALUES (DEFAULT,'Stand Asus ROG Throne Qi', 120.59 , 'Efficient and fast Qi wireless charging technology with gaming style for any gaming room; Customizable 18 RGB lighting zones, and sync-able with other Aura Sync products; Support 2 USB 3.1 ports (1.5A) to charge devices or connect to your gaming gears', 72 ,4.6, 'https://static.fnac-static.com/multimedia/Images/PT/NR/70/c4/66/6734960/1540-1.jpg',4);
+INSERT INTO Product VALUES (DEFAULT,'Headphones Sony WH-1000XM5 Bluetooth ANC NFC Black', 390.90 , 'width: 1,2 m; Drivers: 30mm; 4 Hz–40,000 Hz;  ', 192 ,4.9, 'https://static.fnac-static.com/multimedia/Images/PT/NR/44/10/7c/8130628/1540-1.jpg',4);
+INSERT INTO Product VALUES (DEFAULT,'Powerbank Apple Magsafe Battery Pack', 115 , 'Compatibility: >iPhone 12;  27 W', 14 ,4.4, 'https://static.fnac-static.com/multimedia/Images/PT/NR/cb/2a/72/7482059/1541-2.jpg',4);
+INSERT INTO Product VALUES (DEFAULT,'Gigabyte Video Card GeForce RTX 3060 Ti GAMING OC 8G (rev. 2.0)', 567.99 , 'GeForce RTX 3060 Ti; 7680 x 4320 pixels; 1740 MHz', 76 ,4.4, 'https://static.fnac-static.com/multimedia/Images/PT/MC/62/02/41/21037666/1540-1.jpg#b5762081-c5b4-40fc-bcdb-4da081c30a1d',4);
+
+INSERT INTO Product VALUES (DEFAULT,' Lenovo ThinkPad L13 | 13.3'' | Intel® Core i5-1135G7 | Intel Iris Xe Graphics | 8 GB | SSD 256GB', 886.57 , 'CPU:Intel Core i5-1135G7; 2,4 GHz (Turbo: 4,2 GHz); Intel Iris Xe Graphics', 46 ,4.8, 'https://static.fnac-static.com/multimedia/Images/PT/MC/ef/e0/2e/19849455/1540-1.jpg#1710f501-b988-4871-847a-70d961e6fd06',3);
+INSERT INTO Product VALUES (DEFAULT,'Tablet Lenovo Tab P11 TB-J607Z - 128GB - 5G - Storm Grey', 459 , 'screen: Touch IPS LCD 2K (2000x1200) de 11" (27,94 cm), 400 nit, HDR; 128GB uMCP (UFS-Based MCP, UFS 2.1)', 75 ,4.2, 'https://static.fnac-static.com/multimedia/Images/PT/NR/02/21/7d/8200450/1540-1.jpg',2);
+INSERT INTO Product VALUES (DEFAULT,'Apple iPad Air 10.9'' Wi-Fi - 64GB - Azul ', 699 , '10.9-inch (diagonal) Multi-Touch display with LED backlighting and IPS technology', 94 ,4.9, 'https://static.fnac-static.com/multimedia/Images/PT/NR/35/9f/79/7970613/1540-1.jpg',2);
 
 -- Wishlist
 INSERT INTO Wishlist VALUES (DEFAULT,1, 1);
@@ -326,15 +331,15 @@ INSERT INTO Cart VALUES (DEFAULT,4,9,1);
 --ProductPurchase
 --INSERT INTO ProductPurchase VALUES (1, 1);
 -- Review
-INSERT INTO Review VALUES (DEFAULT,'Title', 'comment' , DEFAULT, 4.2, 3, 4);
-INSERT INTO Review VALUES (DEFAULT,'Title', 'comment' , '2022-10-17', 5, 15, 3);
-INSERT INTO Review VALUES (DEFAULT,'Title', 'comment' , '2022-10-2', 3.6, 5, 4);
-INSERT INTO Review VALUES (DEFAULT,'Title', 'comment' , '2022-06-7', 4.2, 8, 5);
-INSERT INTO Review VALUES (DEFAULT,'Title', 'comment' , '2022-11-2', 4.7, 2, 8);
-INSERT INTO Review VALUES (DEFAULT,'Title', 'comment' , '2022-04-23', 4, 3, 9);
-INSERT INTO Review VALUES (DEFAULT,'Title', 'comment' , '2022-07-1', 4.9, 7, 10);
-INSERT INTO Review VALUES (DEFAULT,'Title', 'comment' , '2022-03-3', 3.9, 5, 11);
-INSERT INTO Review VALUES (DEFAULT,'Title', 'comment' , '2022-07-1', 4.2, 2, 10);
+INSERT INTO Review VALUES (DEFAULT,'Battery', 'The bactery is really good' , DEFAULT, 4.2, 3, 4);
+INSERT INTO Review VALUES (DEFAULT,'Best purchase', 'This phone is amazing, i really recomend' , '2022-10-17', 5, 15, 3);
+INSERT INTO Review VALUES (DEFAULT,'Screen', 'The screen could be better, but in general is a good phone' , '2022-10-2', 3.6, 5, 4);
+INSERT INTO Review VALUES (DEFAULT,'Recommendation', 'this phone is a good choice' , '2022-06-7', 4.2, 8, 5);
+INSERT INTO Review VALUES (DEFAULT,'Battery', 'Really good' , '2022-11-2', 4.7, 2, 8);
+INSERT INTO Review VALUES (DEFAULT,'Battery', 'could be better' , '2022-04-23', 4, 3, 9);
+INSERT INTO Review VALUES (DEFAULT,'Screen', 'The screen is really good' , '2022-07-1', 4.9, 7, 10);
+INSERT INTO Review VALUES (DEFAULT,'Sound', 'The sound is amyzing!!' , '2022-03-3', 4.9, 5, 14);
+INSERT INTO Review VALUES (DEFAULT,'Battery', 'Really good' , '2022-07-1', 4.2, 2, 10);
 
 -----------------------------------------
 -- END

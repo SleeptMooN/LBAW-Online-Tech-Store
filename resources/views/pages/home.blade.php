@@ -15,13 +15,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="5000">
-                    <a href="/">
+                    <a href="/product/16">
                         <img src="https://static.pcdiga.com/media/Skrey_Slideshow/Slide_Image/n/v/nvidia_holidays22_d.jpg"  
                           class="d-block w-100 " alt="failed loading image"></img>
                     </a>
                 </div>
                 <div class="carousel-item" data-bs-interval="5000">
-                    <a href="/">
+                    <a href="/product/17">
                         <img src="https://static.pcdiga.com/media/Skrey_Slideshow/Slide_Image/p/o/portateis_lenovo_thinkpad_d.jpg"
                             class="d-block w-100 " alt="failed loading image">
                     </a>

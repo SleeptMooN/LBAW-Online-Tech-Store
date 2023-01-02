@@ -21,7 +21,7 @@
                             <div class="card mt-4" style="width: 30rem;">
                                 <div class="card-body">
                                     {{-- <h5 class="card-title">Card title</h5> --}}
-                                    <h6 class="card-subtitle mb-2 text-muted">Description</h6>
+                                    <h6 class="card-subtitle mb-2 text-muted">Specifications</h6>
                                     <p class="card-text">
                                         {{ $product->description }}
                                     </p>
@@ -144,7 +144,7 @@
                 <div class="mx-auto">
                   <ul class="" style="list-style-type: none; padding-left: 0px;">
                       <li class="mb-3">
-                          <div class="d-grid p-2 rounded-top rounded-bottom" style="background-color: #f8f9fa;">
+                          <div class="d-grid p-2 rounded-top rounded-bottom" style="background-color:  #f2f7fa;">
                             <textarea class="text form-control mb-3"  rows ="1" name="title" form="reviewForm" placeholder="Enter Title" required autofocus></textarea>
                             <textarea class="text form-control mb-3"  rows ="3" name="reviewText" form="reviewForm" placeholder="Write the review" required autofocus></textarea>
                             <form method="POST" class="add_review align-items-center" id="reviewForm" name="reviewForm" action="{{ route('addreview') }}">
@@ -152,7 +152,7 @@
                               <label for="rating">Rating:</label>
                               <input style="margin-right: 1em;" type="number" id="rating" name="rating" step="0.1" min="0.1" max="5" required autofocus>
                               <input name="id_product" value="{{ $product->id }}" hidden required>
-                              <input  class="btn btn-outline-warning" type="submit" name="submitReview" value="Submit Review">
+                              <input  class="btn btn-outline-warning " type="submit" name="submitReview" value="Submit Review">
                             </form>
                             @else
                             <h4 style="text-align:center; font-weight:bold;">Login to post a review!</h4>  
