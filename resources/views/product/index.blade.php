@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container">
         <main class="mt-5 pt-4 product_data">
             <div class="container mt-2">
 
                 <div class="row wow fadeIn">
-
                     <div class="col-md-6 mb-4">
-
+                        <div class="box">
                         <img src="{{ $product->photo }}" class="img-fluid" alt="">
-
+                        </div>
                     </div>
 
                     <div class="col-md-6 mb-4">
