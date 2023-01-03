@@ -1,3 +1,5 @@
+DROP SCHEMA lbaw22114;
+
 CREATE SCHEMA lbaw22114;
 
 SET search_path TO lbaw22114;
@@ -22,7 +24,8 @@ create table Users(
   name TEXT NOT NULL,
   password TEXT NOT NULL,
   email VARCHAR(128) UNIQUE NOT NULL,
-  phone INT NOT NULL
+  phone INT NOT NULL,
+  is_admin TEXT NOT NULL
 );
 
 create table Address(
@@ -40,7 +43,7 @@ create table Category(
 );
 
 create table Product(
-  id_Product AUTO_INCREMENT PRIMARY KEY,
+  id_Product SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
   price FLOAT NOT NULL CHECK (price > 0),
   description TEXT NOT NULL,

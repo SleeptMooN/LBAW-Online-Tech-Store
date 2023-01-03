@@ -49,10 +49,15 @@
     <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-4">
 
         <h1><span class="badge bg-dark">Products</span></h1>
+        @auth
+        @if (Auth::user()->is_admin)
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProductModal">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProductModal" style="height: 50px">
+            <i class='fas fa-plus' style='font-size:24px '></i>
             Add Product
         </button>
+            @endif
+            @endauth
     </div>
     {{----------------------------------------------------------------------------------------------}}
     <div class="card text-center">

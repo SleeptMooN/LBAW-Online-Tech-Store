@@ -44,7 +44,7 @@ Route::post('/product/removeCart', 'ProductController@removeFromCart')->name('ca
 Route::post('/product/clearCart', 'ProductController@clearCart')->name('card.clear');
 Route::post('/product/updateCartItem', 'ProductController@updateCart')->name('card.updateItem');
 Route::post('/product/addProduct', 'ProductController@addToDB')->name('product.add');
-
+Route::post('/product/editProduct', 'ProductController@editDB')->name('product.edit');
 
 // Category
 Route::get('/category', 'CategoryController@show');

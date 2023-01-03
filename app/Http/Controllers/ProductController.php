@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\Product;
 use App\Models\Cart;
 use App\Models\User;
@@ -165,7 +164,7 @@ class ProductController extends Controller
             'reviews' => $reviews
         ]);
     }
-    
+
     public function redirectToHome(){
         return redirect('/');
     }
