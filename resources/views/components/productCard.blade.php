@@ -1,6 +1,3 @@
-{{-- start card --}}
-
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
 <div class="card p-3 product_data" >
 <div class="box">
@@ -46,5 +43,3 @@
         </div>
     </div>
 </div>
-
-{{-- end card --}}

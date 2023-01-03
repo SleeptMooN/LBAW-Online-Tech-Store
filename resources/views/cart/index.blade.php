@@ -69,7 +69,9 @@
                 </div>   
                 <div class="card-footer mt-3">
                     <h4> Total Price = {{ $total }} €
+                    @if (!Auth::user()->is_admin)
                         <a href="{{ url('checkout') }}" class="btn btn-dark btn-lg float-end" > Proceed to checkout </a>
+                        @endif
                     </h4>
                </div>
             </div>

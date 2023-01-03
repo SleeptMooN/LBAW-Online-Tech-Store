@@ -125,6 +125,7 @@
         </div>
         @endif
         @if (Auth::check()) 
+        
    
         <h4 class=" mt-4"style="text-align:center; font-weight:bold;"> Write your review</h4> 
 
@@ -149,8 +150,8 @@
                             <textarea class="text form-control mb-3"  rows ="3" name="reviewText" form="reviewForm" placeholder="Write the review" required autofocus></textarea>
                             <form method="POST" class="add_review align-items-center" id="reviewForm" name="reviewForm" action="{{ route('addreview') }}">
                               {{ csrf_field() }}
-                              <label for="rating">Rating:</label>
-                              <input style="margin-right: 1em;" type="number" id="rating" name="rating" step="0.1" min="0.1" max="5" required autofocus>
+                              <label for="rating">Score:</label>
+                              <input style="margin-right: 1em;" type="number" placeholder="Number between 0-5" id="rating" name="rating" step="0.1" min="0.1" max="5" required autofocus>
                               <input name="id_product" value="{{ $product->id }}" hidden required>
                               <input  class="btn btn-outline-warning" type="submit" name="submitReview" value="Submit Review">
                             </form>
@@ -158,11 +159,11 @@
                             <h4 style="text-align:center; font-weight:bold;">Login to post a review!</h4>  
                          
                             @endif
-                          </div>
-                        
+                          </div>                     
                       </li>
                   </ul>
                 </div>
+             
             </div>
 
     </div>

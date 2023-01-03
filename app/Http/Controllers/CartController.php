@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
-    // public funcion
 
     public function show() {
         

@@ -13,8 +13,6 @@ class SearchController extends Controller
         $search = $request->query('query');
 
         if($request->input('search')){
-          //  $products = Product::query()->where('name','ilike','%'.$request->input('search').'%')
-            //                            ->orWhere('description','ilike','%'.$request->input('search').'%')->orderby('id')->get();
              $products = Product::whereRaw('tsvectors @@ plainto_tsquery(\'english\',?)',[$request->input('search')])
                             ->orderByRaw('ts_rank(tsvectors, plainto_tsquery(\'english\',?)) DESC', [$request -> input('search')])->get();       
         }else{

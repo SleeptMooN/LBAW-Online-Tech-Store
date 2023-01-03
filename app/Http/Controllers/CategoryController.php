@@ -12,12 +12,6 @@ class CategoryController extends Controller
 
     public function show(){
         return redirect('/');
-        // $name = request('categoryName');
-        // // $test = Product::where('categoryId', $name)->get();
-
-        // return view('category.categoryPage',[
-        //     'tests' =>  $name
-        // ]);
     }
 
     public function products($category) {
