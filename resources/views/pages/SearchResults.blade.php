@@ -4,6 +4,8 @@
 
 <section>
     <ul class="col-md-4 col-lg-12">
+    <div id="message" class="d-grid gap-2 d-md-flex justify-content-md-center mb-4 pl-1" style="color: dark; font-size: 20px; background-color: rgba(45, 196, 90, 0.911)"></div>
+
         @if(!$products->isEmpty())
     <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-4">
         <div class="order-md-2 col-lg-8 mt-4">

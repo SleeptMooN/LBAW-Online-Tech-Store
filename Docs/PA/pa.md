@@ -35,7 +35,20 @@ Esta secção foi abordada nas paginas estáticas FAQ e About, no entanto todos 
 
 ### 4. Input Validation
 
-> Describe how input data was validated, and provide examples to scenarios using both client-side and server-side validation.  
+Exemplo de um caso onde o input é validado,quando o user preenche os campos da order estes requesitos terão de ser cumpridos.s
+
+```
+        $request->validate([
+            'name'=>'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'phone' => 'required|int',
+            'house' => 'required|int',
+            'postal' => 'required|int',
+            'city' => 'required|string',
+            'country' => 'required|string',
+        ]);
+
+``` 
 
 ### 5. Check Accessibility and Usability
 

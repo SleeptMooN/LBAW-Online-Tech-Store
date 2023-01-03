@@ -33,7 +33,7 @@
 
                         <a href="/"
                             class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                            <img src="/img/Logo_OnlyT3ch-removebg.png"
+                            <img src="/img/Logo_OnlyT3ch-removebg.png" alt="error load image"
                                     class="rounded-circle" width="55">
                             <span class="fs-3">{{ config('app.name') }}</span>
                         </a>
@@ -85,7 +85,7 @@
                         <a class="d-flex flex-column fic text-dark text-decoration-none" href="/category/1" >
                             <div class="bgo d-flex justify-content-center">
                             <div class="box">
-                                <img src="/img/phone.jpeg" class="rounded-circle" width="70" height="70">
+                                <img src="/img/phone.jpeg" alt="error load image" class="rounded-circle" width="70" height="70">
                                 </div>
                             </div>
                             <span class="fw-bold text-sm-center">Smartphone</span>
@@ -95,7 +95,7 @@
                         <a class="d-flex flex-column fic text-dark text-decoration-none" href="/category/2" >
                             <div class="bgo d-flex justify-content-center">
                             <div class="box">
-                                <img src="/img/tablet.webp" class="rounded-circle" width="80" height="70">
+                                <img src="/img/tablet.webp" alt="error load image" class="rounded-circle" width="80" height="70">
                                 </div>
                             </div>
                             <span class="fw-bold text-sm-center">Tablets</span>
@@ -105,7 +105,7 @@
                         <a class="d-flex flex-column fic text-dark text-decoration-none" href="/category/3" >
                             <div class="bgo d-flex justify-content-center">
                             <div class="box">
-                                <img src="/img/pc.jpg" class="rounded-circle" width="70" height="70">
+                                <img src="/img/pc.jpg" alt="error load image" class="rounded-circle" width="70" height="70">
                                 </div>
                             </div>
                             <span class="fw-bold text-sm-center">Computers</span>
@@ -115,7 +115,7 @@
                         <a class="d-flex flex-column fic text-dark text-decoration-none" href="/category/4" >
                             <div class="bgo d-flex justify-content-center">
                             <div class="box">
-                                <img src="/img/acc.png" class="rounded-circle" width="70" height="70">
+                                <img src="/img/acc.png" alt="error load image"class="rounded-circle" width="70" height="70">
                                 </div>
                             </div>
                             <span class="fw-bold text-sm-center">Accessories</span>

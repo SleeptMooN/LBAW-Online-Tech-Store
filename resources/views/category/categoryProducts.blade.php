@@ -7,7 +7,7 @@
         <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-4">
             <h1>{{ $category->name }}</h1>
         </div>
-
+        <div id="message" class="d-grid gap-2 d-md-flex justify-content-md-center mb-4 pl-1" style="color: dark; font-size: 20px; background-color: rgba(45, 196, 90, 0.911)"></div>
         <h3 class="mt-0 mb-5">Showing <span class="text-primary">{{ $products->count() }}</span> Products</h3>
 
         <div class="col-md-8 order-md-2 col-lg-12">
