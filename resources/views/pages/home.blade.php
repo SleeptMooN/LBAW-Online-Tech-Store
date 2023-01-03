@@ -59,6 +59,7 @@
 </section>
 {{-- End Carousel section --}}
 
+<<<<<<< resources/views/pages/home.blade.php
 {{-- Start Products --}}
 <section class="mb-4">
     <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-4">
