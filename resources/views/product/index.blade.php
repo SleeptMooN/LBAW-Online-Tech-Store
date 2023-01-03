@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container">
         <main class="mt-5 pt-4 product_data">
             <div class="container mt-2">
 
                 <div class="row wow fadeIn">
-
                     <div class="col-md-6 mb-4">
-
+                        <div class="box">
                         <img src="{{ $product->photo }}" class="img-fluid" alt="">
-
+                        </div>
                     </div>
 
                     <div class="col-md-6 mb-4">
@@ -21,7 +21,7 @@
                             <div class="card mt-4" style="width: 30rem;">
                                 <div class="card-body">
                                     {{-- <h5 class="card-title">Card title</h5> --}}
-                                    <h6 class="card-subtitle mb-2 text-muted">Description</h6>
+                                    <h6 class="card-subtitle mb-2 text-muted">Specifications</h6>
                                     <p class="card-text">
                                         {{ $product->description }}
                                     </p>
@@ -84,17 +84,18 @@
             </div>
         </main>
 
-        @if(!$reviews->isEmpty())
         <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-4 pl-1">
             <h1>Reviews</h1>
-            </div>
+        </div>
+
+        @if(!$reviews->isEmpty())
             <div class="row d-flex justify-content-center">
             <div class="col-md-8 col-lg-8">
                 <div class="card shadow-0 border" style="background-color: #adb5bd;">
                     <div class="card-body p-4">
 
                         @foreach ($reviews as $items)
-                            <div class="card mb-2">
+                            <div class="card mb-3">
                                 <div class="card-body">
                                     <h4 style=" font-weight:bold">{{ $items->title }} </h4>
                                     <p class="text-muted"> {{ $items->comment }}</p>
@@ -121,8 +122,48 @@
         @if($reviews -> isEmpty())
         <div class=" mt-4">
             <h2 style="text-align:center; font-weight:bold;"> This product has no reviews yet!</h2> 
-            </div>
+        </div>
         @endif
+        @if (Auth::check()) 
+   
+        <h4 class=" mt-4"style="text-align:center; font-weight:bold;"> Write your review</h4> 
+
+    @if (session('message'))
+         <div class="alert alert-success text-center">
+        {{ session('message') }}
+        </div>
+    <script>
+        let alert = document.querySelector('.alert');
+
+      
+        setTimeout(function() {
+          alert.remove();
+        }, 3000);
+    </script>
+    @endif
+                <div class="mx-auto">
+                  <ul class="" style="list-style-type: none; padding-left: 0px;">
+                      <li class="mb-3">
+                          <div class="d-grid p-2 rounded-top rounded-bottom" style="background-color:  #f2f7fa;">
+                            <textarea class="text form-control mb-3"  rows ="1" name="title" form="reviewForm" placeholder="Enter Title" required autofocus></textarea>
+                            <textarea class="text form-control mb-3"  rows ="3" name="reviewText" form="reviewForm" placeholder="Write the review" required autofocus></textarea>
+                            <form method="POST" class="add_review align-items-center" id="reviewForm" name="reviewForm" action="{{ route('addreview') }}">
+                              {{ csrf_field() }}
+                              <label for="rating">Rating:</label>
+                              <input style="margin-right: 1em;" type="number" id="rating" name="rating" step="0.1" min="0.1" max="5" required autofocus>
+                              <input name="id_product" value="{{ $product->id }}" hidden required>
+                              <input  class="btn btn-outline-warning " type="submit" name="submitReview" value="Submit Review">
+                            </form>
+                            @else
+                            <h4 style="text-align:center; font-weight:bold;">Login to post a review!</h4>  
+                         
+                            @endif
+                          </div>
+                        
+                      </li>
+                  </ul>
+                </div>
+            </div>
 
     </div>
 

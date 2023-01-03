@@ -22,16 +22,24 @@ class HomePageController extends Controller
             ->where('users_id', $id)
             ->get();
        
-    $smartphone = Product::where('category_id', 1)->take(10)->get();
-    $tablets = Product::where('category_id', 2)->take(10)->get();
-    $computers = Product::where('category_id', 3)->take(10)->get();
-    $accessories = Product::where('category_id', 4)->take(10)->get();
+    $smartphone = Product::where('category_id', 1)->where('id',2)->get();
+    $tablets = Product::where('category_id', 2)->take(1)->orderby('id')->get();
+    $computers = Product::where('category_id', 3)->where('id',12)->get();
+    $accessories = Product::where('category_id', 4)->where('id',15)->get();
+    $best1 = Product::where('category_id', 1)->where('id',1)->get();
+    $best2 = Product::where('category_id', 4)->where('id',14)->get();
+    $best3 = Product::where('category_id', 3)->where('id',10)->get();
+    $best4= Product::where('category_id', 1)->where('id',5)->get();
     
     return view('pages.home',[
         'smartphone' => $smartphone,
         'computers' => $computers,
         'accessories' => $accessories,
-        'tablets' => $tablets
+        'tablets' => $tablets,
+        'best1' => $best1,
+        'best2' => $best2,
+        'best3' => $best3,
+        'best4' => $best4,
     ]);
   }
 

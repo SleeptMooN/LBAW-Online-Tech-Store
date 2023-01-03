@@ -157,7 +157,7 @@ class ProductController extends Controller
 
     public function show($id){
         $product = Product::where('id', $id)->get();
-        $reviews = Review::where('product_id',$id)->simplePaginate(4);
+        $reviews = Review::where('product_id',$id)->get();
 
         return view('product.index', [
             'product' => $product[0],

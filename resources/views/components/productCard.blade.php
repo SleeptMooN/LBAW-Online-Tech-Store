@@ -2,9 +2,13 @@
 
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
-<div class="card p-3 product_data">
-    <img src="{{ $item->photo }}" class="card-img-top " alt="error loading image" onclick="location.href='/product/{{ $item->id }}'" style="cursor: pointer;">
-    <div class="card-body">
+<div class="card p-3 product_data" >
+<div class="box">
+    <img src="{{ $item->photo }}" class="card-img-top "
+    
+        alt="error loading image" onclick="location.href='/product/{{ $item->id }}'" style="cursor: pointer;">
+        </div>
+    <div class="card-body" >
         <h5 class="card-title text-center">
             <a href="/product/{{ $item->id }}" class="text-center text-decoration-none text-secondary">
                 {{ $item->name }}

@@ -84,7 +84,9 @@
                     <div class= "ms-3 me-3">
                         <a class="d-flex flex-column fic text-dark text-decoration-none" href="/category/1" >
                             <div class="bgo d-flex justify-content-center">
+                            <div class="box">
                                 <img src="/img/phone.jpeg" class="rounded-circle" width="70" height="70">
+                                </div>
                             </div>
                             <span class="fw-bold text-sm-center">Smartphone</span>
                         </a>    
@@ -92,7 +94,9 @@
                     <div class= "ms-3 me-3">
                         <a class="d-flex flex-column fic text-dark text-decoration-none" href="/category/2" >
                             <div class="bgo d-flex justify-content-center">
+                            <div class="box">
                                 <img src="/img/tablet.webp" class="rounded-circle" width="80" height="70">
+                                </div>
                             </div>
                             <span class="fw-bold text-sm-center">Tablets</span>
                         </a>    
@@ -100,7 +104,9 @@
                     <div class= "ms-3 me-3 ">
                         <a class="d-flex flex-column fic text-dark text-decoration-none" href="/category/3" >
                             <div class="bgo d-flex justify-content-center">
+                            <div class="box">
                                 <img src="/img/pc.jpg" class="rounded-circle" width="70" height="70">
+                                </div>
                             </div>
                             <span class="fw-bold text-sm-center">Computers</span>
                         </a>    
@@ -108,7 +114,9 @@
                     <div class= "ms-3 me-3 ">
                         <a class="d-flex flex-column fic text-dark text-decoration-none" href="/category/4" >
                             <div class="bgo d-flex justify-content-center">
+                            <div class="box">
                                 <img src="/img/acc.png" class="rounded-circle" width="70" height="70">
+                                </div>
                             </div>
                             <span class="fw-bold text-sm-center">Accessories</span>
                         </a>    

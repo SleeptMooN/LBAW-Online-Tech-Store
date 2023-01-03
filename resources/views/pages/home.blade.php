@@ -19,10 +19,25 @@
                     <img src="https://static.pcdiga.com/media/Skrey_Slideshow/Slide_Image/n/v/nvidia_holidays22_d.jpg" class="d-block w-100 " alt="failed loading image"></img>
                 </a>
             </div>
-            <div class="carousel-item" data-bs-interval="5000">
-                <a href="/">
-                    <img src="https://static.pcdiga.com/media/Skrey_Slideshow/Slide_Image/p/o/portateis_lenovo_thinkpad_d.jpg" class="d-block w-100 " alt="failed loading image">
-                </a>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <a href="/product/16">
+                        <img src="https://static.pcdiga.com/media/Skrey_Slideshow/Slide_Image/n/v/nvidia_holidays22_d.jpg"  
+                          class="d-block w-100 " alt="failed loading image"></img>
+                    </a>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <a href="/product/17">
+                        <img src="https://static.pcdiga.com/media/Skrey_Slideshow/Slide_Image/p/o/portateis_lenovo_thinkpad_d.jpg"
+                            class="d-block w-100 " alt="failed loading image">
+                    </a>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <a href="/product/12">
+                        <img src="https://static.pcdiga.com/media/Skrey_Slideshow/Slide_Image/l/e/lenovo_legion_xmas_d.jpg"
+                            class="d-block w-100" alt="failed loading image">
+                    </a>
+                </div>
             </div>
             <div class="carousel-item" data-bs-interval="5000">
                 <a href="/product/12">
@@ -44,11 +59,12 @@
 </section>
 {{-- End Carousel section --}}
 
+<<<<<<< resources/views/pages/home.blade.php
 {{-- Start Products --}}
 <section class="mb-4">
     <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-4">
 
-        <h1><span class="badge bg-dark">Products</span></h1>
+        <h1><span class="badge bg-warning">Featured Products</span></h1>
         @auth
         @if (Auth::user()->is_admin)
         <!-- Button trigger modal -->
@@ -59,11 +75,7 @@
             @endif
             @endauth
     </div>
-    {{----------------------------------------------------------------------------------------------}}
     <div class="card text-center">
-        <div class="card-header">
-            Phones
-        </div>
         <p>
         <div class="container ">
             <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
@@ -76,78 +88,97 @@
 
                 @endforeach
                 @endif
-            </div>
-        </div>
-        {{----------------------------------------------------------------------------------------------}}
-        <p>
-        <div class="card text-center">
-            <div class="card-header">
-                Tablets
-            </div>
-            <p>
-            <div class="container ">
-                <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
-                    @if ($tablets->count() != 0)
+                @if ($tablets->count() != 0)
                     @foreach ($tablets as $item)
                     <div class="col">
                         @include('components.productCard', ['item' => $item])
                     </div>
 
                     @endforeach
-                    @endif
-                </div>
-            </div>
-            {{----------------------------------------------------------------------------------------------}}
-            <p>
-            <div class="card text-center">
-                <div class="card-header">
-                    Computers
-                </div>
-                <p>
-                <div class="container ">
-                    <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
-                        @if ($computers->count() != 0)
-                        @foreach ($computers as $item)
+                @endif
+                @if ($computers->count() != 0)
+                    @foreach ($computers as $item)
                         <div class="col">
                             @include('components.productCard', ['item' => $item])
                         </div>
-
-                        @endforeach
-                        @endif
-                    </div>
-                </div>
-                {{----------------------------------------------------------------------------------------------}}
-                <p>
-                <div class="card text-center">
-                    <div class="card-header">
-                        Accessories
-                    </div>
-                    <p>
-                    <div class="container ">
-                        <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
-                            @if ($accessories->count() != 0)
-                            @foreach ($accessories as $item)
-                            <div class="col">
-                                @include('components.productCard', ['item' => $item])
-                            </div>
-
-                            @endforeach
-                            @endif
+                    @endforeach
+                @endif
+                @if ($accessories->count() != 0)
+                    @foreach ($accessories as $item)
+                        <div class="col">
+                            @include('components.productCard', ['item' => $item])
                         </div>
                     </div>
                     <p>
 </section>
 {{----------------------------------------------------------------------------------------------}}
 {{-- End Products --}}
-
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img class="d-block w-100" src="https://static.pcdiga.com/media/Skrey_Slideshow/Slide_Image/m/a/macbook_pro_banner_d.jpg" alt="First slide">
+                    @endforeach
+                @endif
+                </div>
         </div>
+        
+        <p>
+    </section>
+    {{----------------------------------------------------------------------------------------------}}
+    
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <a href="/product/9">
+                <img class="d-block w-100" src="https://static.pcdiga.com/media/Skrey_Slideshow/Slide_Image/m/a/macbook_pro_banner_d.jpg" alt="First slide">
+           </a>
+            </div>
     </div>
-</div>
+  </div>
+  <section class="mb-4">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-4 mt-4">
+        
+            <h1><span class="badge bg-warning">Best sellers</span></h1>
+        </div>
+    
+        <div class="card text-center">
+ 
+        <p>
+        <div class="container ">        
+            <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+                
+                @if ($best1->count() != 0)
+                    @foreach ($best1 as $item)
+                        <div class="col">
+                            @include('components.productCard', ['item' => $item])
+                        </div>
 
+                    @endforeach
+                @endif
+                @if ($best2->count() != 0)
+                    @foreach ($best2 as $item)
+                        <div class="col">
+                            @include('components.productCard', ['item' => $item])
+                        </div>
 
+                    @endforeach
+                @endif
+                @if ($best3->count() != 0)
+                    @foreach ($best3 as $item)
+                        <div class="col">
+                            @include('components.productCard', ['item' => $item])
+                        </div>
 
+                    @endforeach
+                @endif
+                @if ($best4->count() != 0)
+                    @foreach ($best4 as $item)
+                        <div class="col">
+                            @include('components.productCard', ['item' => $item])
+                        </div>
+
+                    @endforeach
+                @endif
+            
+                </div>
+        </div>
+        
+        <p>
+    </section>
 @endsection

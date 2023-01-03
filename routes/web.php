@@ -39,12 +39,7 @@ Route::post('/remove_wishlist', 'WishListController@removeWishlist');
 
 // Product
 Route::get('/product/{id}', 'ProductController@show');
-Route::post('/product/addCart', 'ProductController@addToCart')->name('card.add');
-Route::post('/product/removeCart', 'ProductController@removeFromCart')->name('card.remove');
-Route::post('/product/clearCart', 'ProductController@clearCart')->name('card.clear');
-Route::post('/product/updateCartItem', 'ProductController@updateCart')->name('card.updateItem');
 Route::post('/product/addProduct', 'ProductController@addToDB')->name('product.add');
-Route::post('/product/editProduct', 'ProductController@editDB')->name('product.edit');
 
 // Category
 Route::get('/category', 'CategoryController@show');
@@ -67,5 +62,8 @@ Route::get('checkout', 'CheckoutController@index')->name('checkout');
 Route::post('place-order','CheckoutController@placeorder')->name('place-order');
 Route::get('orders','CheckoutController@showorders')->name('orders');
 Route::get('view-order/{id}','CheckoutController@vieworder')->name('view-order');
+
+//reviews
+Route::post('addreview','ReviewController@addreview')->name('addreview');
 
 
