@@ -26,7 +26,7 @@ Route::get('/deleteUser', 'UsersController@deleteuser')->name('deleteUser');
 
 // Cart
 Route::get('/cart', 'CartController@show');
-Route::post('/add-to-cart', 'CartController@addProduct');
+Route::post('/add-to-cart', 'CartController@addProduct')->name('add-to-cart');
 Route::post('/delete-cart-item', 'CartController@delProduct');
 Route::post('/update-cart', 'CartController@updatecart');
 Route::get('/load-cart-data' , 'CartController@cartcount');

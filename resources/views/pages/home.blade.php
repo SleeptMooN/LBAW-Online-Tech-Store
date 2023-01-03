@@ -48,7 +48,7 @@
 
     </section>
     {{-- End Carousel section --}}
-
+    <div id="message" class="d-grid gap-2 d-md-flex justify-content-md-center mb-4 pl-1" style="color: dark; font-size: 20px; background-color: rgba(45, 196, 90, 0.911)"></div>
     <section class="mb-4">
         <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-4 mt-4">
         

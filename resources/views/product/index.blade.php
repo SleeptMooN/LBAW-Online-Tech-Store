@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div id="message" class="d-grid gap-2 d-md-flex justify-content-md-center mb-4 pl-1" style="color: dark; font-size: 20px; background-color: rgba(45, 196, 90, 0.911)"></div>
 
     <div class="container">
         <main class="mt-5 pt-4 product_data">

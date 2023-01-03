@@ -6,7 +6,7 @@
         <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-4">
             <h1>WishList</h1>
         </div>
-        
+        <div id="message" class="d-grid gap-2 d-md-flex justify-content-md-center mb-4 pl-1" style="color: dark; font-size: 20px; background-color: rgba(45, 196, 90, 0.911)"></div>
             <div class="container my-5">
                 <div class="card shadow">
                     @if($wishlist->count() > 0)

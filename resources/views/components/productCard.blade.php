@@ -1,4 +1,5 @@
 
+
 <div class="card p-3 product_data" >
 <div class="box">
     <img src="{{ $item->photo }}" class="card-img-top "

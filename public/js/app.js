@@ -32,10 +32,11 @@ document.querySelectorAll('.addToCartBtn').forEach(function(element) {
 
     sendAjaxRequest('POST', '/add-to-cart', data, function(response) {
       var response = JSON.parse(response.target.responseText);
-      alert(response.status);
+      document.getElementById('message').innerHTML = response.status;
     });
   });
 });
+
 
 
 document.querySelectorAll('.addToCart').forEach(function(element) {
@@ -54,7 +55,7 @@ document.querySelectorAll('.addToCart').forEach(function(element) {
     sendAjaxRequest('POST', '/add-to-cart', data, function(response) {
       var response = JSON.parse(response.target.responseText);
 
-      alert(response.status);
+      document.getElementById('message').innerHTML = response.status;
       
     });
   });
@@ -76,7 +77,7 @@ document.querySelectorAll('.addToCart_WL').forEach(function(element) {
     sendAjaxRequest('POST', '/add-to-cart', data, function(response) {
       var response = JSON.parse(response.target.responseText);
       product_data.remove();
-      alert(response.status);
+      document.getElementById('message').innerHTML = response.status;
     });
   });
 });
@@ -95,7 +96,7 @@ document.querySelectorAll('.addToWishBtn').forEach(function(element) {
 
     sendAjaxRequest('POST', '/update_wishlist', data, function(response) {
       var response = JSON.parse(response.target.responseText);
-      alert(response.status);
+      document.getElementById('message').innerHTML = response.status;
     });
   });
 });
@@ -115,7 +116,7 @@ document.querySelectorAll('.wishlist-remove-btn').forEach(function(element) {
     sendAjaxRequest('POST', '/remove_wishlist', data, function(response) {
       var response = JSON.parse(response.target.responseText);
       product_data.remove();
-      alert(response.status);
+      document.getElementById('message').innerHTML = response.status;
     });
   });
 });
@@ -136,7 +137,7 @@ document.querySelectorAll('.delete-cart-item').forEach(function(element) {
     sendAjaxRequest('POST', '/delete-cart-item', data, function(response) {
       var response = JSON.parse(response.target.responseText);
       window.location.reload();
-      alert(response.status);
+      document.getElementById('message').innerHTML = response.status;
     });
   });
 });
