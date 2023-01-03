@@ -1,19 +1,19 @@
 -- Users
-INSERT INTO Users VALUES (1,'Example','Example123','Example@example.com','987654321');
-INSERT INTO Users VALUES (2,' Elwood Ellis','tMF3sw6','wood34@gmmail.com','93697524');
-INSERT INTO Users VALUES (3,' Tiffani Derek ','QJg4MehPa','tiderek@1232.com','95334314');
-INSERT INTO Users VALUES (4,' Timmy Hattie ','MP2p7BhIH','hatie3231@de32.org','90853239');
-INSERT INTO Users VALUES (5,' Dave Randi ','9I8ELTY7u','randi53621@gmaiiil.com','99930384');
-INSERT INTO Users VALUES (6,' Ira Trinity ','3Th8FkGHv','iraa4253@asd.com','90416185');
-INSERT INTO Users VALUES (7,' Ernest Macie ','AbxSjnfyC','23macie123@hotmail.com','93749133');
-INSERT INTO Users VALUES (8,' Davey Katrina ','fvuGD9Mye','katrinaa12@869.com','96523660');
-INSERT INTO Users VALUES (9,' Hester Araminta ','PqKwgZNUj','hester1524@mail.com','93498111');
-INSERT INTO Users VALUES (10,' Essie Lorin ','eevQ9yKbK','lorin132@ess.com','95690506');
-INSERT INTO Users VALUES (11,' Josh Jed ','qUM8czLpV','jjed@12321.com','95221856');
-INSERT INTO Users VALUES (12,' Demelza Dylan ','GjD9kL3jE','de_dy3431@mail.com','99825607');
-INSERT INTO Users VALUES (13,' Dionne Lally ','wTrXHpDfv','ionne213@56gt.com','98317321');
-INSERT INTO Users VALUES (14,' Severo Soren ','TxaGa44aT','sorenn_12@ial.com','97749743');
-INSERT INTO Users VALUES (15,' Angus Jaimie ','bq85c6Ays','imae32123@hotmail.com','93622457');
+INSERT INTO Users VALUES (1,'Example','Example123','Example@example.com','987654321', 'false');
+INSERT INTO Users VALUES (2,' Elwood Ellis','tMF3sw6','wood34@gmmail.com','93697524', 'true');
+INSERT INTO Users VALUES (3,' Tiffani Derek ','QJg4MehPa','tiderek@1232.com','95334314', 'false');
+INSERT INTO Users VALUES (4,' Timmy Hattie ','MP2p7BhIH','hatie3231@de32.org','90853239', 'false');
+INSERT INTO Users VALUES (5,' Dave Randi ','9I8ELTY7u','randi53621@gmaiiil.com','99930384', 'false');
+INSERT INTO Users VALUES (6,' Ira Trinity ','3Th8FkGHv','iraa4253@asd.com','90416185', 'false');
+INSERT INTO Users VALUES (7,' Ernest Macie ','AbxSjnfyC','23macie123@hotmail.com','93749133', 'false');
+INSERT INTO Users VALUES (8,' Davey Katrina ','fvuGD9Mye','katrinaa12@869.com','96523660', 'false');
+INSERT INTO Users VALUES (9,' Hester Araminta ','PqKwgZNUj','hester1524@mail.com','93498111', 'false');
+INSERT INTO Users VALUES (10,' Essie Lorin ','eevQ9yKbK','lorin132@ess.com','95690506', 'false');
+INSERT INTO Users VALUES (11,' Josh Jed ','qUM8czLpV','jjed@12321.com','95221856', 'false');
+INSERT INTO Users VALUES (12,' Demelza Dylan ','GjD9kL3jE','de_dy3431@mail.com','99825607', 'false');
+INSERT INTO Users VALUES (13,' Dionne Lally ','wTrXHpDfv','ionne213@56gt.com','98317321', 'false');
+INSERT INTO Users VALUES (14,' Severo Soren ','TxaGa44aT','sorenn_12@ial.com','97749743', 'false');
+INSERT INTO Users VALUES (15,' Angus Jaimie ','bq85c6Ays','imae32123@hotmail.com','93622457', 'false');
 
 -- Admins
 INSERT INTO AdminUsers VALUES (1);

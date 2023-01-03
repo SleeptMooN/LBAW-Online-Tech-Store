@@ -39,6 +39,7 @@ Route::post('/remove_wishlist', 'WishListController@removeWishlist');
 
 // Product
 Route::get('/product/{id}', 'ProductController@show');
+Route::post('/product/addProduct', 'ProductController@addToDB')->name('product.add');
 
 // Category
 Route::get('/category', 'CategoryController@show');

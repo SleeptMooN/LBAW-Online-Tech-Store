@@ -43,7 +43,7 @@ class HomePageController extends Controller
     ]);
   }
 
-    /**
+  /**
    * Show the application about page.
    *
    */
