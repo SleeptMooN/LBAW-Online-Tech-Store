@@ -1,7 +1,7 @@
 create schema if not exists lbaw22114;
 SET search_path TO lbaw22114;
 
-
+  
 DROP TABLE IF EXISTS Users CASCADE;
 DROP TABLE IF EXISTS Address CASCADE;
 DROP TABLE IF EXISTS Category CASCADE;
