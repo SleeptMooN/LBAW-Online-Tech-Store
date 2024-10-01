@@ -4,9 +4,6 @@
 * Project developed with the Laravel framework, in PHP, HTML, CSS, and JavaScript.  
 * The database was run in SQL on a college server.  
 
-
-## ONLINE SHOP 
-
 ### Artifacts
 [ER: Requirements Specification Component](./Docs/ER/er.md)
 
